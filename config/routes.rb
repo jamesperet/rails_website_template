@@ -1,5 +1,33 @@
 RailsWebsiteTemplate::Application.routes.draw do
-  devise_for :users
+  
+  get "start/index"
+  devise_for :users, :skip => [:sessions, :passwords, :confirmations, :registrations]
+  as :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session
+    delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get   'signup' => 'devise/registrations#new',    :as => :new_user_registration
+    post  'signup' => 'users/registrations#create', :as => :user_registration
+    put  'signup' => 'devise/registrations#update', :as => :user_registration_update
+    scope '/account' do
+        # password reset
+        get   '/reset-password'        => 'devise/passwords#new',    as: 'new_user_password'
+        put   '/reset-password'        => 'devise/passwords#update', as: 'user_password'
+        post  '/reset-password'        => 'devise/passwords#create'
+        get   '/reset-password/change' => 'devise/passwords#edit',   as: 'edit_user_password'
+        # confirmation
+        get   '/confirm'        => 'devise/confirmations#show',   as: 'user_confirmation'
+        post  '/confirm'        => 'devise/confirmations#create'
+        get   '/confirm/resend' => 'devise/confirmations#new',    as: 'new_user_confirmation'
+        # settings & cancellation
+        get '/cancel'   => 'devise/registrations#cancel', as: 'cancel_user_registration'
+        get '/settings' => 'devise/registrations#edit',   as: 'edit_user_registration'
+        put '/settings' => 'devise/registrations#update'
+        # account deletion
+        delete '' => 'devise/registrations#destroy'
+    end
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,4 +82,5 @@ RailsWebsiteTemplate::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'start#index'
 end
