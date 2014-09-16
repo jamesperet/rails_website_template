@@ -7,8 +7,8 @@ RailsWebsiteTemplate::Application.routes.draw do
     post 'login' => 'devise/sessions#create', :as => :user_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
     get   'signup' => 'devise/registrations#new',    :as => :new_user_registration
-    post  'signup' => 'users/registrations#create', :as => :user_registration
-    put  'signup' => 'devise/registrations#update', :as => :user_registration_update
+    post  'signup' => 'devise/registrations#create', :as => :user_registration
+    put  'signup' => 'users/registrations#update', :as => :user_registration_update
     scope '/account' do
         # password reset
         get   '/reset-password'        => 'devise/passwords#new',    as: 'new_user_password'
@@ -22,7 +22,7 @@ RailsWebsiteTemplate::Application.routes.draw do
         # settings & cancellation
         get '/cancel'   => 'devise/registrations#cancel', as: 'cancel_user_registration'
         get '/settings' => 'devise/registrations#edit',   as: 'edit_user_registration'
-        put '/settings' => 'devise/registrations#update'
+        put '/settings' => 'users/registrations#update', as: 'update_user_registration'
         # account deletion
         delete '' => 'devise/registrations#destroy'
     end

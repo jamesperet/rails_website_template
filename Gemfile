@@ -31,6 +31,7 @@ end
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 gem 'flatstrap-rails'
 gem 'bootstrap-timepicker-rails'
 gem 'simple_form'
