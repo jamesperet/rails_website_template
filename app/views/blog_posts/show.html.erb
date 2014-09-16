@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog_post.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @blog_post.slug %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @blog_post.content %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @blog_post.published %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @blog_post.author.full_name %>
+</p>
+
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<%= link_to 'Back', blog_posts_path %>

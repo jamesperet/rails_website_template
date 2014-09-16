@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Blog</h1>
+</div>
+
+<ul class="thumbnails">
+    <% @blog_posts.each do |post| %>
+	   <li class="span3">
+	     <div class="thumbnail">
+	       <img src="http://placehold.it/300x200" alt="">
+	       <h3><%= post.title %></h3>
+	       <p><%= post.content %></p>
+	     </div>
+	   </li>
+    <% end %>
+</ul>
+
+<br>
+
+<%= link_to 'New Blog post', new_blog_post_path %>
