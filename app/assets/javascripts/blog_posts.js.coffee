@@ -1,4 +1,4 @@
-$ ->
+attachRatingHandler = ->
 
   # to set summernote object
   # You should change '#post_content' to your textarea input id
@@ -28,3 +28,6 @@ $ ->
     # alert $('#post_content').code()[0]
     summer_note.val summer_note.code()[0]
     true
+    
+$(document).ready attachRatingHandler
+$(document).on "page:load", attachRatingHandler
