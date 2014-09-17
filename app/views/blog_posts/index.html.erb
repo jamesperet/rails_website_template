@@ -7,7 +7,7 @@
 	   <li class="span3">
 	     <div class="thumbnail">
 	       <img src="http://placehold.it/300x200" alt="">
-	       <h3><%= post.title %></h3>
+	       <h3><%= link_to post.title, post_path(post) %></h3>
 	       <p><%= post.content %></p>
 	     </div>
 	   </li>
@@ -15,5 +15,3 @@
 </ul>
 
 <br>
-
-<%= link_to 'New Blog post', new_blog_post_path %>
