@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require flatstrap/bootstrap
+ *= require font-awesome
+ *= require summernote
  *= require_tree .
  */
