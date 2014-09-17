@@ -2,7 +2,7 @@ RailsWebsiteTemplate::Application.routes.draw do
   
   get "blog" => "blog_posts#index", :as => :blog
   get "post/:id" => "blog_posts#show", :as => :post
-  get "admin/posts/list" => "blog_posts#list", :as => :post_list
+  get "admin/posts" => "blog_posts#list", :as => :post_list
   resources :blog_posts, path: '/admin/posts'
 
   get "start/index"
