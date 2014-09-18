@@ -1,8 +1,12 @@
 RailsWebsiteTemplate::Application.routes.draw do
   
+  get "admin/dashboard" => "admin_panel#dashboard", :as => :admin_dashboard
+  get "admin" => "admin_panel#index"
+  get "admin/posts" => "admin_panel#posts", :as => :admin_posts
+  get "admin/users" => "admin_panel#users", :as => :admin_users
+  
   get "blog" => "blog_posts#index", :as => :blog
   get "post/:id" => "blog_posts#show", :as => :post
-  get "admin/posts" => "blog_posts#list", :as => :post_list
   resources :blog_posts, path: '/admin/posts'
 
   get "start/index"

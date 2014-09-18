@@ -1,0 +1,38 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="page-header">
+		  <h1>Blog Posts <%= link_to 'New Blog post', new_blog_post_path, :class => 'btn btn-primary btn-mini' %></h1>
+		</div>
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th>Title</th>
+		      <th>Slug</th>
+		      <th>Content</th>
+		      <th>Published</th>
+		      <th>Author</th>
+		      <th></th>
+		      <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @posts.each do |blog_post| %>
+		      <tr>
+		        <td><%= blog_post.title %></td>
+		        <td><%= blog_post.slug %></td>
+		        <td><%= blog_post.description %></td>
+		        <td><%= blog_post.published %></td>
+		        <td><%= blog_post.author.full_name %></td>
+		        <td><%= link_to 'Show', post_path(blog_post) %></td>
+		        <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
+		        <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		
+	</div>
+</div>

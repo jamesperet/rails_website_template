@@ -14,9 +14,4 @@ class User < ActiveRecord::Base
     return name
   end
   
-  def is_admin?
-    #self.admin == true
-    true
-  end
-  
 end
