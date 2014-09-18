@@ -5,7 +5,7 @@
 <ul class="thumbnails">
     <% @blog_posts.each do |post| %>
 	   <li class="span3">
-	     <div class="thumbnail">
+	     <div class="thumbnail" style="height: 300px;">
 	       <img src="http://placehold.it/300x200" alt="">
 	       <h3><%= link_to post.title, post_path(post) %></h3>
 	       <p><%= post.description %></p>

@@ -1,4 +1,7 @@
 class BlogPostsController < ApplicationController
+  
+  before_filter :authenticate_user, only: [:edit, :update, :destroy, :list]
+  
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
   # GET /blog_posts
@@ -74,5 +77,9 @@ class BlogPostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
       params.require(:blog_post).permit(:title, :slug, :content, :published, :description, :author_id)
+    end
+    
+    def authenticate_user 
+      redirect_to new_user_session_path, alert: 'You dont have permission to access that page!' unless current_user && current_user.is_admin?
     end
 end

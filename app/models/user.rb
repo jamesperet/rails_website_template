@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
     name = self.first_name.to_s + ' ' + self.last_name.to_s
     return name
   end
+  
+  def is_admin?
+    #self.admin == true
+    true
+  end
+  
 end

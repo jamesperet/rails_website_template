@@ -5,11 +5,8 @@
 
 <%= @blog_post.content.html_safe %>
 
-<hr>
 
-<% if user_signed_in? %>
-	<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-	<%= link_to 'Back', blog_path %>
-<% else %>
-	<%= link_to 'Back', blog_path %>
-<% end %>
+<div style="margin-top: 40px; text-align: center;">
+<%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => 'btn btn-small' if user_signed_in? %>	
+<%= link_to 'Back', blog_path, :class => 'btn btn-small' %>
+</div>
