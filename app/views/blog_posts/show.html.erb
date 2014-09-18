@@ -1,29 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1><%= @blog_post.title %></h1>
+  <small>by <%= @blog_post.author.full_name %>, <%= time_ago_in_words(@blog_post.created_at) %> ago</small> 
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_post.title %>
-</p>
+<%= @blog_post.content.html_safe %>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @blog_post.slug %>
-</p>
+<hr>
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog_post.content %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @blog_post.published %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @blog_post.author.full_name %>
-</p>
-
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-<%= link_to 'Back', blog_path %>
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+	<%= link_to 'Back', blog_path %>
+<% else %>
+	<%= link_to 'Back', blog_path %>
+<% end %>

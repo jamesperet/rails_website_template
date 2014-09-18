@@ -3,13 +3,13 @@
 A template for creating rails websites that includes the following:
 
 * User System (Devise)
-* Twitter Bootstrap + Flatstrap
+* Twitter Bootstrap + Flatstrap + Font Awesome
 * Basic Blog
+* SummerNote editor
 
 Other features are still under development:
 
 * Admin Panel
-* SummerNote editor
 * Image upload/File System
 * Translation (pt-BR, EN)
 * Email System
