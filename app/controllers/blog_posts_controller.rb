@@ -63,6 +63,14 @@ class BlogPostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upload
+      @file = params[:file]
+      @upload = Upload.create(:file => @file)
+      @upload.save
+
+      render(json: {:url => @upload.file.to_s })
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

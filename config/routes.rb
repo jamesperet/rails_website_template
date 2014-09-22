@@ -7,6 +7,7 @@ RailsWebsiteTemplate::Application.routes.draw do
   get "admin/posts" => "admin_panel#posts", :as => :admin_posts
   get "admin/users" => "admin_panel#users", :as => :admin_users
   
+  post "upload" => "blog_posts#upload", :as => :post_upload
   get "blog" => "blog_posts#index", :as => :blog
   get "post/:id" => "blog_posts#show", :as => :post
   resources :blog_posts, path: '/admin/posts'
