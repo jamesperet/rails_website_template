@@ -1,5 +1,7 @@
 RailsWebsiteTemplate::Application.routes.draw do
   
+  resources :uploads
+
   get "admin/dashboard" => "admin_panel#dashboard", :as => :admin_dashboard
   get "admin" => "admin_panel#index"
   get "admin/posts" => "admin_panel#posts", :as => :admin_posts
@@ -8,6 +10,9 @@ RailsWebsiteTemplate::Application.routes.draw do
   get "blog" => "blog_posts#index", :as => :blog
   get "post/:id" => "blog_posts#show", :as => :post
   resources :blog_posts, path: '/admin/posts'
+  
+  get '/admin/files' => "admin_panel#files", :as => :admin_files
+  resources :uploads, path: '/admin/files'
 
   get "start/index"
   devise_for :users, :skip => [:sessions, :passwords, :confirmations, :registrations]

@@ -7,6 +7,7 @@ class AdminPanelController < ApplicationController
   def dashboard
     @users = User.all
     @posts = BlogPost.all
+    @files = Upload.all
   end
 
   def posts
@@ -15,5 +16,9 @@ class AdminPanelController < ApplicationController
 
   def users
     @users = User.all
+  end
+  
+  def files
+    @uploads = Upload.all
   end
 end

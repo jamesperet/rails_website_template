@@ -7,10 +7,10 @@ A template for creating rails websites that includes the following:
 * Basic Blog
 * Admin Panel
 * SummerNote editor
+* Image upload/File System
 
 Other features are still under development:
 
-* Image upload/File System
 * Translation (pt-BR, EN)
 * Email System
 * Search System

@@ -4,6 +4,8 @@
 	   <%= link_to '<i class="icon-home icon-white"></i> Dashboard'.html_safe, admin_dashboard_path %></li>
 	   <% if current_page?(:action => 'posts')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to '<i class="icon-file icon-white"></i> Posts'.html_safe, admin_posts_path %></li>
+	   <% if current_page?(:action => 'files')%><li class="active"> <% else %><li><% end %>
+	   <%= link_to '<i class="icon-file icon-white"></i> Files'.html_safe, admin_files_path %></li>
 	   <% if current_page?(:action => 'users')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to '<i class="icon-user icon-white"></i> Users'.html_safe, admin_users_path %></li>
 	</ul>
