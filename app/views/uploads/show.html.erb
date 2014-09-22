@@ -7,7 +7,11 @@
 
 <p>
   <strong>File:</strong><br>
-  <%= image_tag @upload.file.to_s if @upload.file != nil %>
+  <% if @upload.file.file.content_type == 'image/jpeg' || @upload.file.file.content_type == 'image/png' %>
+ 	<%= image_tag @upload.file.to_s if @upload.file != nil %>
+  <% else %>
+  	<%= link_to @upload.title, @upload.file.to_s %>
+  <% end %>
 </p>
 
 <p>
