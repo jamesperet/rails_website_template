@@ -1,0 +1,25 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="page-header">
+		  <h1>Users</h1>
+		</div>
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>Email</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @users.each do |user| %>
+		      <tr>
+		        <td><%= user.full_name %></td>
+		        <td><%= user.email %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+</div>

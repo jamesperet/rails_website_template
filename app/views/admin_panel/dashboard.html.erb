@@ -1,0 +1,19 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="hero-unit">
+		  <h1>Dashboard</h1>
+		  <p>Welcome back <%= current_user.full_name%></p>
+		</div>
+		<div class="well summary">
+			<ul>
+				<li>
+					<a href="<%= admin_users_path %>"><span class="count"><%= @users.length %></span> Usuários</a>
+				</li>
+				<li class="last">
+					<a href="<%= admin_posts_path %>"><span class="count"><%= @posts.length %></span> Posts</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
