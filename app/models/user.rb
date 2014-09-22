@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
   
   has_many :posts
+  
+  mount_uploader :avatar, AvatarUploader
            
   def full_name
     name = self.first_name.to_s + ' ' + self.last_name.to_s

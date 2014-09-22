@@ -41,6 +41,10 @@ gem 'devise'
 gem "letter_opener", :group => :development
 gem 'redcarpet'
 gem 'summernote-rails'
+gem 'figaro'
+gem "mini_magick"
+gem 'fog'
+gem "carrierwave"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
