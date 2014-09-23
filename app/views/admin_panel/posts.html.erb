@@ -4,35 +4,30 @@
 		<div class="page-header">
 		  <h1><%= t "admin_panel.posts" %> <%= link_to (t "admin_panel.new_blog_post"), new_blog_post_path, :class => 'btn btn-primary btn-mini' %></h1>
 		</div>
-		<table class="table table-bordered">
-		  <thead>
-		    <tr>
-		      <th>Title</th>
-		      <th>Slug</th>
-		      <th>Content</th>
-		      <th>Published</th>
-		      <th>Author</th>
-		      <th></th>
-		      <th></th>
-		      <th></th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-		    <% @posts.each do |blog_post| %>
-		      <tr>
-		        <td><%= blog_post.title %></td>
-		        <td><%= blog_post.slug %></td>
-		        <td><%= blog_post.description %></td>
-		        <td><%= blog_post.published %></td>
-		        <td><%= blog_post.author.full_name %></td>
-		        <td><%= link_to 'Show', post_path(blog_post) %></td>
-		        <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
-		        <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		      </tr>
-		    <% end %>
-		  </tbody>
-		</table>
+		
+		<% @posts.each do |post| %>
+		<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
+		  <span class="pull-left">
+			  <% if post.image.mini.to_s != '' %>
+			  	<%= image_tag post.image.mini.to_s %>
+			  <% else %>
+		       	<img src="http://placehold.it/150x100" alt="">
+			  <% end %>
+		  </span>
+		  <div class="media-body pull-left">
+		    <h3 class="media-heading" style="margin-bottom: 0px;"><%= link_to post.title, post_path(post) %></h3>
+		    <p style="margin-top: -5px;"><small><%= t "blog.by" %> <%= post.author.full_name %>, <%= time_ago_in_words(post.created_at) %> <%= t "blog.ago" %></small></p>
+		    <p><%= post.description %></p>
+		  </div> 
+		  <div class="pull-right">
+			 <div class="btn-group btn-group-vertical">
+		      	<%= link_to '<i class="icon-eye-open"></i>'.html_safe, post_path(post), :class => 'btn' %>
+		      	<%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_blog_post_path(post), :class => 'btn' %>
+		      	<%= link_to '<i class="icon-remove"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+			 </div>
+		  </div>
+		</div>
+		<% end %>
 		
 	</div>
 </div>

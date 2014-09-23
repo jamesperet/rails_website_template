@@ -19,6 +19,7 @@ Other features are still under development:
 - Store
 - Inventory
 - Module Controller
+- Maintaince Mode
 
 ## Todo's
 
