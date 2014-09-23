@@ -62,3 +62,4 @@ Temporary Items
 
 # Ignore File Uploads
 /public/uploads
+/public/ .

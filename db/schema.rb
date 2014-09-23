@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140922074342) do
   create_table "uploads", force: true do |t|
     t.string   "title"
     t.string   "file"
-    t.text     "desciption"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

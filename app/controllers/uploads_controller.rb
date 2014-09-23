@@ -56,9 +56,18 @@ class UploadsController < ApplicationController
   def destroy
     @upload.destroy
     respond_to do |format|
-      format.html { redirect_to uploads_url }
+      format.html { redirect_to admin_files_path }
       format.json { head :no_content }
     end
+  end
+  
+  def upload
+      @file = params[:file]
+      @upload = Upload.create(:file => @file)
+      @upload.title = @upload.file.to_s.split('/').last
+      @upload.save
+
+      render(json: {:url => @upload.file.to_s })
   end
 
   private
@@ -69,6 +78,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params.require(:upload).permit(:title, :file, :desciption)
+      params.require(:upload).permit(:title, :file, :description)
     end
 end
