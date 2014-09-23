@@ -2,12 +2,12 @@
 	<%= render 'admin_panel/sidebar_nav' %>
 	<div class="span9">
 		<div class="page-header">
-		  <h1>Blog Posts <%= link_to 'Upload File', new_upload_path, :class => 'btn btn-primary btn-mini' %></h1>
+		  <h1>Files <%= link_to 'Upload File', new_upload_path, :class => 'btn btn-primary btn-mini' %></h1>
 		</div>
 		<ul class="thumbnails">
 		    <% @uploads.each do |upload| %>
 			   <li class="span3" style="">
-			     <div class="thumbnail">
+			     <div class="thumbnail" style="height: 250px;">
 				  <% if upload.file.content_type.start_with?('image') && upload.file.thumb.to_s != nil %>
 				  	<%= image_tag upload.file.thumb.to_s %>
 				  <% else %>
