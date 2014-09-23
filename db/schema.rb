@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922074342) do
+ActiveRecord::Schema.define(version: 20140923061213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140922074342) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
+    t.string   "image"
   end
 
   add_index "blog_posts", ["author_id"], name: "index_blog_posts_on_author_id", using: :btree

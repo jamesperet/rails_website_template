@@ -12,7 +12,7 @@ A template for creating rails websites that includes the following:
 
 Other features are still under development:
 
-* Email System
+* Email System (PaperClip + MailChimp)
 * Search System
 * Wiki/Codex
 - Portfolio
@@ -27,6 +27,7 @@ Other features are still under development:
 * post form layout
 * edit account layout
 * make admin button
+
 * Install instructions
 * Heroku Deploy button
 

@@ -6,7 +6,11 @@
     <% @blog_posts.each do |post| %>
 	   <li class="span3">
 	     <div class="thumbnail" style="height: 300px;">
-	       <img src="http://placehold.it/300x200" alt="">
+		  <% if post.image.file != nil %>
+		  	<%= image_tag post.image.thumb.to_s %>
+		  <% else %>
+	       	<img src="http://placehold.it/300x200" alt="">
+		  <% end %>
 	       <h3><%= link_to post.title, post_path(post) %></h3>
 	       <p><%= post.description %></p>
 	     </div>
