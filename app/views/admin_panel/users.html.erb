@@ -4,24 +4,36 @@
 		<div class="page-header">
 		  <h1><%= t "admin_panel.users" %></h1>
 		</div>
-		<table class="table table-bordered">
-		  <thead>
-		    <tr>
-			 <th>Image</th>
-		      <th>Name</th>
-		      <th>Email</th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-		    <% @users.each do |user| %>
-		      <tr>
-			   <th><%= image_tag user.avatar.thumb.to_s if user.avatar != nil %></th>
-		        <td><%= user.full_name %></td>
-		        <td><%= user.email %></td>
-		      </tr>
-		    <% end %>
-		  </tbody>
-		</table>
+		<% @users.each do |user| %>
+			<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
+			  <span class="pull-left">
+			    <% if user.avatar.file != nil %>
+			    	  <%= image_tag user.avatar.thumb.to_s %>
+			    <% else %>
+			      <%= image_tag "user.png", size: "50x50" %>
+			    <% end %>
+			  </span>
+			  <div class="media-body pull-left" style="min-width: 180px;">
+			    <h4 class="media-heading"><%= user.full_name %></h4>
+			    <p><%= user.email %></p>
+			  </div>
+			  <div class="pull-left" style=" padding: 5px; padding-bottom: 0px; padding-top: 0px; margin-top: -6px; text-align: center; margin-left: 25px;">
+				  <span class="summary" style="margin-bottom: 0px;">
+				  <span class="count"><%= user.sign_in_count %></span>
+				  <span><%= t "admin_panel.logins" %></span></span>
+			  </div>
+			  <% if user.admin %>
+				  <div class="pull-left" style=" padding: 5px; padding-bottom: 0px; padding-top: 0px; margin-top: -6px; text-align: center; margin-left: 25px;">
+				  
+					  <span class="summary" style="margin-bottom: 0px;">
+					  <span class="count">
+					  
+						  <i class="icon-user"></i>
+					  </span>
+					  <span>Admin</span></span>
+				  </div>
+			  <% end %>
+			</div>
+		<% end %>
 	</div>
 </div>

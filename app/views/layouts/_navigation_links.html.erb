@@ -11,15 +11,15 @@
 			</a>
 		    	<ul class="dropdown-menu">
 				<% if current_user.admin %>
-					<li><%= link_to 'Admin Panel', admin_dashboard_path %></li>
+					<li><%= link_to (t "nav.admin_panel"), admin_dashboard_path %></li>
 				<% end %>
-	  			<li><%= link_to 'Account', edit_user_registration_path %></li>
-	  			<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+	  			<li><%= link_to (t "nav.account"), edit_user_registration_path %></li>
+	  			<li><%= link_to (t "nav.logout"), destroy_user_session_path, method: :delete %></li>
 			</ul>
 		</li>
 	<% else %>
-		<li><%= link_to "Login", new_user_session_path  %></li>
-		<li><%= link_to "Sign Up", new_user_registration_path  %></li>
+		<li><%= link_to (t "nav.login"), new_user_session_path  %></li>
+		<li><%= link_to (t "nav.signup"), new_user_registration_path  %></li>
 	<% end %>
 </ul>
   

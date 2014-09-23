@@ -210,3 +210,16 @@ en:
     new_blog_post: New Post
     upload_file: Upload File
     welcome: Welcome back
+    logins: Logins
+    last_login: Last Login
+  nav:
+    admin_panel: Admin Panel
+    account: Account
+    logout: Logout
+    login: Login
+    signup: Sign Up
+    back: Back
+    edit: Editar
+  blog:
+    by: By
+    ago: ago

@@ -212,3 +212,17 @@ pt-BR:
     new_blog_post: +
     upload_file: +
     welcome: Bem vindo
+    logins: Acessos
+    last_login: Último Acesso
+  nav:
+    admin_panel: Painel de Controle
+    account: Conta
+    logout: Sair
+    login: Entrar
+    signup: Cadastro
+    back: Voltar
+    edit: Editar
+  blog:
+    by: Por
+    ago: atras
+    

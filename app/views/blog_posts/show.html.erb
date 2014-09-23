@@ -1,12 +1,12 @@
 <div class="page-header">
   <h1><%= @blog_post.title %></h1>
-  <small>by <%= @blog_post.author.full_name %>, <%= time_ago_in_words(@blog_post.created_at) %> ago</small> 
+  <small><%= t "blog.by" %> <%= @blog_post.author.full_name %>, <%= time_ago_in_words(@blog_post.created_at) %> <%= t "blog.ago" %></small> 
 </div>
 
 <%= @blog_post.content.html_safe %>
 
 
 <div style="margin-top: 40px; text-align: center;">
-<%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => 'btn btn-small' if user_signed_in? %>	
-<%= link_to 'Back', blog_path, :class => 'btn btn-small' %>
+<%= link_to (t "nav.edit"), edit_blog_post_path(@blog_post), :class => 'btn btn-small' if user_signed_in? %>	
+<%= link_to (t "nav.back"), blog_path, :class => 'btn btn-small' %>
 </div>

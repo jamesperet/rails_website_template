@@ -7,11 +7,11 @@ A template for creating rails websites that includes the following:
 * Basic Blog
 * Admin Panel
 * SummerNote editor
+* Image upload/File System
+* Translation (pt-BR, EN)
 
 Other features are still under development:
 
-* Image upload/File System
-* Translation (pt-BR, EN)
 * Email System
 * Search System
 * Wiki/Codex
@@ -23,6 +23,12 @@ Other features are still under development:
 ## Todo's
 
 * Authentication layout
+* post thumbnails
+* post form layout
+* edit account layout
+* make admin button
+* Install instructions
+* Heroku Deploy button
 
 ## Example Websites
 
