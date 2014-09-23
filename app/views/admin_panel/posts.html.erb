@@ -2,7 +2,7 @@
 	<%= render 'admin_panel/sidebar_nav' %>
 	<div class="span9">
 		<div class="page-header">
-		  <h1>Blog Posts <%= link_to 'New Blog post', new_blog_post_path, :class => 'btn btn-primary btn-mini' %></h1>
+		  <h1><%= t "admin_panel.posts" %> <%= link_to (t "admin_panel.new_blog_post"), new_blog_post_path, :class => 'btn btn-primary btn-mini' %></h1>
 		</div>
 		<table class="table table-bordered">
 		  <thead>

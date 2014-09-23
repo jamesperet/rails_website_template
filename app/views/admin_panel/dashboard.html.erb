@@ -2,19 +2,19 @@
 	<%= render 'admin_panel/sidebar_nav' %>
 	<div class="span9">
 		<div class="hero-unit">
-		  <h1>Dashboard</h1>
-		  <p>Welcome back <%= current_user.full_name%></p>
+		  <h1><%= t "admin_panel.dashboard" %></h1>
+		  <p><%= t "admin_panel.welcome" %> <%= current_user.full_name%></p>
 		</div>
 		<div class="well summary">
 			<ul>
 				<li>
-					<a href="<%= admin_users_path %>"><span class="count"><%= @users.length %></span> Users</a>
+					<a href="<%= admin_users_path %>"><span class="count"><%= @users.length %></span> <%= t "admin_panel.users" %></a>
 				</li>
 				<li>
-					<a href="<%= admin_files_path %>"><span class="count"><%= @files.length %></span> Files</a>
+					<a href="<%= admin_files_path %>"><span class="count"><%= @files.length %></span> <%= t "admin_panel.files" %></a>
 				</li>
 				<li class="last">
-					<a href="<%= admin_posts_path %>"><span class="count"><%= @posts.length %></span> Posts</a>
+					<a href="<%= admin_posts_path %>"><span class="count"><%= @posts.length %></span> <%= t "admin_panel.posts" %></a>
 				</li>
 			</ul>
 		</div>

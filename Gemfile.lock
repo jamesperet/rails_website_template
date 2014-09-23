@@ -198,6 +198,7 @@ DEPENDENCIES
   fog
   font-awesome-rails
   friendly_id (~> 5.0.0)
+  i18n
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
