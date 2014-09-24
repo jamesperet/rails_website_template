@@ -212,6 +212,12 @@ en:
     welcome: Welcome back
     logins: Logins
     last_login: Last Login
+    configurations: Configurations
+    language_hint: Wait a few seconds for changes to take effect
+    website_name: Website Name
+    tagline: Tagline
+    default_language: Default Language
+    update_config_btn: Update Config
   nav:
     admin_panel: Admin Panel
     account: Account

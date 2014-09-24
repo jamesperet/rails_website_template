@@ -6,6 +6,8 @@ RailsWebsiteTemplate::Application.routes.draw do
   get "admin" => "admin_panel#index"
   get "admin/posts" => "admin_panel#posts", :as => :admin_posts
   get "admin/users" => "admin_panel#users", :as => :admin_users
+  get "admin/config" => "admin_panel#site_config", :as => :admin_config
+  post "admin/config/update" => "admin_panel#site_config_update", :as => :config_update
   
   post "upload" => "uploads#upload", :as => :post_upload
   get "blog" => "blog_posts#index", :as => :blog

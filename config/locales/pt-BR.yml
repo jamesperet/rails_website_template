@@ -214,6 +214,13 @@ pt-BR:
     welcome: Bem vindo
     logins: Acessos
     last_login: Último Acesso
+    configurations: Configurações
+    language_hint: Espere alguns segundos para as mudanças ocorrerem
+    config_update_success: As configurações foram atualizadas com sucesso.
+    website_name: Nome do Site
+    tagline: Tagline
+    default_language: Lingua padrão
+    update_config_btn: Salvar Configurações
   nav:
     admin_panel: Painel de Controle
     account: Conta

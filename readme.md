@@ -39,3 +39,15 @@ Other features are still under development:
 - [benjaminperet](http://benjaminperet.com) (Under Development)
 - [High Effects](http://higheffects.com.br) (Upgrade/Rewrite)
 
+## Configurations
+
+* Website Name
+* Tagline
+* Logo
+* Contact Email
+* Default Language
+
+* Maintaince Mode (Boolean)
+* Maintance Mode Message
+
+* Modules

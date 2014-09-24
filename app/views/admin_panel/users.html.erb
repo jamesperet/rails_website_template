@@ -4,6 +4,7 @@
 		<div class="page-header">
 		  <h1><%= t "admin_panel.users" %></h1>
 		</div>
+		<%= bootstrap_flash %>
 		<% @users.each do |user| %>
 			<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
 			  <span class="pull-left">

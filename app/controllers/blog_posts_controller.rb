@@ -48,7 +48,7 @@ class BlogPostsController < ApplicationController
         format.html { redirect_to @blog_post, notice: 'Blog post was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html {  }
         format.json { render json: @blog_post.errors, status: :unprocessable_entity }
       end
     end

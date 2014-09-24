@@ -8,5 +8,7 @@
 	   <%= link_to ('<i class="icon-file icon-white"></i> '+(t "admin_panel.files")).html_safe, admin_files_path %></li>
 	   <% if current_page?(:action => 'users')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-user icon-white"></i> '+(t "admin_panel.users")).html_safe, admin_users_path %></li>
+	   <% if current_page?(:action => 'site_config')%><li class="active"> <% else %><li><% end %>
+	   <%= link_to ('<i class="icon-cog icon-white"></i> '+(t "admin_panel.configurations")).html_safe, admin_config_path %></li>
 	</ul>
 </div>
