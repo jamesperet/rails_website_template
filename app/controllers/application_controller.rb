@@ -11,13 +11,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :email, :current_password, :avatar) }
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password) }
   end
-  
-  private
-  
-    def config_site  
-      @config = Info.first
-      #I18n.config.enforce_available_locales = false
-      I18n.default_locale = @config.default_language
-    end
+    
+  def config_site  
+    @config = Info.first
+    #I18n.config.enforce_available_locales = false
+    I18n.default_locale = @config.default_language
+  end
   
 end

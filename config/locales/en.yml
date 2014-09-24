@@ -218,6 +218,8 @@ en:
     tagline: Tagline
     default_language: Default Language
     update_config_btn: Update Config
+    contact_email: Contact Email
+    config_update_success: Configurations saved successfully
   nav:
     admin_panel: Admin Panel
     account: Account

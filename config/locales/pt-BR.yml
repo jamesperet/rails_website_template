@@ -221,6 +221,7 @@ pt-BR:
     tagline: Tagline
     default_language: Lingua padrão
     update_config_btn: Salvar Configurações
+    contact_email: Email de contato
   nav:
     admin_panel: Painel de Controle
     account: Conta

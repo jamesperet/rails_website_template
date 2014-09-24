@@ -12,7 +12,8 @@ A template for creating rails websites that includes the following:
 
 Other features are still under development:
 
-* Email System (PaperClip + MailChimp)
+* Contact System
+* Email System (PaperClip + MailChimp + Mandrill)
 * Search System
 * Wiki/Codex
 - Portfolio
@@ -24,7 +25,6 @@ Other features are still under development:
 ## Todo's
 
 * Authentication layout
-* post thumbnails
 * post form layout
 * edit account layout
 * make admin button
@@ -40,12 +40,6 @@ Other features are still under development:
 - [High Effects](http://higheffects.com.br) (Upgrade/Rewrite)
 
 ## Configurations
-
-* Website Name
-* Tagline
-* Logo
-* Contact Email
-* Default Language
 
 * Maintaince Mode (Boolean)
 * Maintance Mode Message

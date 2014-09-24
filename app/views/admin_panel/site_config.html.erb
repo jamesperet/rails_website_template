@@ -12,7 +12,8 @@
 			  <div class="form-inputs">
 			    <%= f.input :website_name, :label => (t 'admin_panel.website_name'), :input_html => {:class => 'input-large'} %>
 			    <%= f.input :tagline, :label => (t 'admin_panel.tagline'), :input_html => { :class => 'input-xxlarge'} %>
-			    <%= f.input :default_language, collection: ["en", "pt-BR"], prompt:"Select default language",  :label => (t 'admin_panel.default_language'), hint: (t "admin_panel.language_hint") %>
+			    <%= f.input :default_language, collection: ["en", "pt-BR"], prompt:"Select default language",  :label => (t 'admin_panel.default_language'), hint: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
+			    <%= f.input :contact_email, :label => (t 'admin_panel.contact_email'), :input_html => {:class => 'input-large'} %>
 
 			  </div>
 
