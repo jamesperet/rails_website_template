@@ -9,9 +9,9 @@
 			<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
 			  <span class="pull-left">
 			    <% if user.avatar.file != nil %>
-			    	  <%= image_tag user.avatar.thumb.to_s %>
+			    	  <%= image_tag user.avatar.thumb.to_s, :class => 'img-circle' %>
 			    <% else %>
-			      <%= image_tag "user.png", size: "50x50" %>
+			      <%= image_tag "user.png", size: "50x50", :class => 'img-circle' %>
 			    <% end %>
 			  </span>
 			  <div class="media-body pull-left" style="min-width: 180px;">

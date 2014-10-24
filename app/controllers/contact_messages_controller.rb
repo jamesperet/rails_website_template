@@ -1,5 +1,5 @@
 class ContactMessagesController < ApplicationController
-  before_action :set_contact_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact_message, only: [:show, :edit, :update, :destroy, :unread, :readed]
 
   # GET /contact_messages
   # GET /contact_messages.json
@@ -18,6 +18,37 @@ class ContactMessagesController < ApplicationController
     respond_to do |format|
       if @contact_message.save
         format.html { redirect_to @contact_message, notice: 'Contact message was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @contact_message }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @contact_message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def show
+    @contact_message.unread = false
+    @contact_message.save
+  end
+  
+  def readed
+    @contact_message.unread = false
+    respond_to do |format|
+      if @contact_message.save
+        format.html { redirect_to admin_contact_messages_path, notice: 'Contact message marked as readed.' }
+        format.json { render action: 'show', status: :created, location: @contact_message }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @contact_message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def unread
+    @contact_message.unread = true
+    respond_to do |format|
+      if @contact_message.save
+        format.html { redirect_to admin_contact_messages_path, notice: 'Contact message marked as unread.' }
         format.json { render action: 'show', status: :created, location: @contact_message }
       else
         format.html { render action: 'new' }

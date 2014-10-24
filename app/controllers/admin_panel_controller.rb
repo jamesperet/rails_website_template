@@ -17,7 +17,7 @@ class AdminPanelController < ApplicationController
   end
 
   def contact_messages
-    @contact_messages = ContactMessage.all
+    @contact_messages = ContactMessage.order('created_at DESC').all
   end
 
   def users

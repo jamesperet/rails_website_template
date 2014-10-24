@@ -8,19 +8,32 @@
 		<% @contact_messages.each do |msg| %>
 		<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
 		  <div class="media-body pull-left">
-		    <h3 class="media-heading" style="margin-bottom: 0px;"><%= link_to msg.title, contact_message_path(msg) %> 
-			    <%= ('<span class="badge badge-warning" style="margin-top: -11px">' + (t "admin_panel.new") + '</span>').html_safe if msg.unread %></h3>
-		    <p style="margin-top: -5px;"><small><%= t "blog.by" %> 
+		    <h4 class="media-heading" style="margin-bottom: 0px;">
+			    <%= ('<span class="badge badge-warning" style="margin-top: -11px">' + (t "admin_panel.new") + '</span>').html_safe if msg.unread %>
+			    <%= link_to msg.title, contact_message_path(msg) %> 
+		    
+		    <span style="margin-top: -5px;"><small><%= t "contact.by" %> 
 			     <% if msg.user != nil %>
 			    		<%= msg.user.full_name %>
 				<% else %>
 					<%= msg.email %>
 				<% end %>
 				, <%= time_ago_in_words(msg.created_at) %> <%= t "blog.ago" %>
-		    </small></p>
-		    <p><%= msg.content %></p>
-		  </div> 
-		</div>
+		    </small></span>
+		    </h4>
+		    <p style="margin-top: 15px;"><%= truncate( msg.content, length: 120, omission: '...') %></p>
+		  </div>
+  		  <div class="pull-right">
+  			 <div class="btn-group btn-group-vertical">
+  				<% if msg.unread %>
+  		      		<%= link_to '<i class="icon-eye-open"></i>'.html_safe, mark_contact_message_as_readed_path(msg), :class => 'btn' %>
+  				<% else %>
+  					<%= link_to '<i class="icon-eye-close"></i>'.html_safe, mark_contact_message_as_unread_path(msg), :class => 'btn' %>
+  				<% end %>
+  		      	<%= link_to '<i class="icon-remove"></i>'.html_safe, msg, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+  			 </div>
+  		  </div> 
+  		</div>
 		<% end %>
 		
 	</div>
