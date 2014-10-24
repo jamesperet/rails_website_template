@@ -1,0 +1,14 @@
+<%= bootstrap_form_for(@contact_message, layout: :default) do |f| %>
+	<%= f.alert_message (t 'contact.error') %>
+
+	<%= f.text_field :title, :label => (t 'contact.title'), :class => 'input-block-level' %>
+	<% if !user_signed_in? %>
+		<%= f.email_field :email, :class => 'input-block-level' %>
+	<% end %>
+	<%= f.text_area :content, :label => (t 'contact.message'), :class => 'input-block-level', rows: '6'  %>
+
+	<%= f.button :submit, :value => (t 'contact.send') %>
+	
+ 
+
+<% end %>

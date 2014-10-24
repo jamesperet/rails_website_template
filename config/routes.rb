@@ -1,10 +1,13 @@
 RailsWebsiteTemplate::Application.routes.draw do
   
+  resources :contact_messages, path: '/contact'
+
   resources :uploads
 
   get "admin/dashboard" => "admin_panel#dashboard", :as => :admin_dashboard
   get "admin" => "admin_panel#index"
   get "admin/posts" => "admin_panel#posts", :as => :admin_posts
+  get "admin/contact_messages" => "admin_panel#contact_messages", :as => :admin_contact_messages
   get "admin/users" => "admin_panel#users", :as => :admin_users
   get "admin/config" => "admin_panel#site_config", :as => :admin_config
   post "admin/config/update" => "admin_panel#site_config_update", :as => :config_update

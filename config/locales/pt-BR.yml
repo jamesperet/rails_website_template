@@ -222,6 +222,9 @@ pt-BR:
     default_language: Lingua padrão
     update_config_btn: Salvar Configurações
     contact_email: Email de contato
+    contact_messages: Mensagens de Contato
+    new: Nova
+    messages: Mensagens
   nav:
     admin_panel: Painel de Controle
     account: Conta
@@ -233,4 +236,12 @@ pt-BR:
   blog:
     by: Por
     ago: atras
-    
+  contact:
+    contact: Contato
+    contact_messages: Mensagens de Contato
+    greeting1: Entre em contato pelo email
+    greeting2: ou escreva uma mensagem
+    title: Assunto
+    message: Mensagem
+    send: Enviar
+    error: Favor corrigir os erros abaixo

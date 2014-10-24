@@ -16,6 +16,10 @@ class AdminPanelController < ApplicationController
      @posts = BlogPost.all
   end
 
+  def contact_messages
+    @contact_messages = ContactMessage.all
+  end
+
   def users
     @users = User.all
   end

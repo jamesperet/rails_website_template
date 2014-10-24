@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @contact_message.title %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contact_message.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @contact_message.content %>
+</p>
+
+<p>
+  <strong>Unread:</strong>
+  <%= @contact_message.unread %>
+</p>
+
+<% if @contact_message.user != nil %>
+	<p>
+	  <strong>User:</strong>
+	  <%= @contact_message.user.full_name  %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', admin_contact_messages_path %>

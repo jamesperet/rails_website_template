@@ -220,6 +220,9 @@ en:
     update_config_btn: Update Config
     contact_email: Contact Email
     config_update_success: Configurations saved successfully
+    contact_messages: Contact Messages
+    new: New
+    messages: Messages
   nav:
     admin_panel: Admin Panel
     account: Account
@@ -231,3 +234,12 @@ en:
   blog:
     by: By
     ago: ago
+  contact:
+    contact: Contact
+    contact_messages: Contact Messages
+    greeting1: Send us an email at
+    greeting2: or write us a message
+    title: Message Title
+    message: Message
+    send: Send
+    error: Please correct the following errors

@@ -1,14 +1,23 @@
 <div class="span3" style="margin-top: 25px;">	
 	<ul class="nav nav-pills nav-stacked">
+	   
 	   <% if current_page?(:action => 'dashboard')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-home icon-white"></i> '+(t "admin_panel.dashboard")).html_safe, admin_dashboard_path %></li>
+	   
 	   <% if current_page?(:action => 'posts')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-file icon-white"></i> '+(t "admin_panel.posts")).html_safe, admin_posts_path %></li>
+	   
 	   <% if current_page?(:action => 'files')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-file icon-white"></i> '+(t "admin_panel.files")).html_safe, admin_files_path %></li>
+	   
+	   <% if current_page?(:action => 'contact_messages')%><li class="active"> <% else %><li><% end %>
+	   <%= link_to ('<i class="icon-envelope icon-white"></i> '+(t "admin_panel.messages")).html_safe, admin_contact_messages_path %></li>
+	   
 	   <% if current_page?(:action => 'users')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-user icon-white"></i> '+(t "admin_panel.users")).html_safe, admin_users_path %></li>
+	   
 	   <% if current_page?(:action => 'site_config')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="icon-cog icon-white"></i> '+(t "admin_panel.configurations")).html_safe, admin_config_path %></li>
+	   
 	</ul>
 </div>

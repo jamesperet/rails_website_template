@@ -36,6 +36,7 @@ gem 'flatstrap-rails'
 gem 'font-awesome-rails'
 gem 'bootstrap-timepicker-rails'
 gem 'simple_form'
+gem 'bootstrap_form'
 gem 'friendly_id', '~> 5.0.0'
 gem 'devise'
 gem "letter_opener", :group => :development

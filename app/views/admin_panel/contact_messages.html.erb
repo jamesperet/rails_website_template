@@ -1,0 +1,27 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="page-header">
+		  <h1><%= t "admin_panel.contact_messages" %></h1>
+		</div>
+		<%= bootstrap_flash %>
+		<% @contact_messages.each do |msg| %>
+		<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
+		  <div class="media-body pull-left">
+		    <h3 class="media-heading" style="margin-bottom: 0px;"><%= link_to msg.title, contact_message_path(msg) %> 
+			    <%= ('<span class="badge badge-warning" style="margin-top: -11px">' + (t "admin_panel.new") + '</span>').html_safe if msg.unread %></h3>
+		    <p style="margin-top: -5px;"><small><%= t "blog.by" %> 
+			     <% if msg.user != nil %>
+			    		<%= msg.user.full_name %>
+				<% else %>
+					<%= msg.email %>
+				<% end %>
+				, <%= time_ago_in_words(msg.created_at) %> <%= t "blog.ago" %>
+		    </small></p>
+		    <p><%= msg.content %></p>
+		  </div> 
+		</div>
+		<% end %>
+		
+	</div>
+</div>
