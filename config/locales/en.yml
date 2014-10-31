@@ -226,8 +226,8 @@ en:
     maintenance_mode: Maintenance Mode
     maintenance_title: Maintenance Page Title
     maintenance_message: Maintenance Page Message
-    on_switch: On
-    off_switch: Off
+    on_switch: Disable
+    off_switch: Enable
   nav:
     admin_panel: Admin Panel
     account: Account

@@ -17,7 +17,7 @@
 			    <hr>
 			    <%= f.form_group :maintenance_mode, class: 'bootstrap_switch_group' do %>
 			    		<%= f.check_box :maintenance_mode, :label => (t 'admin_panel.maintenance_mode'), class: 'bootstrap_switch',
-					data: { on_text: (t "admin_panel.on_switch"), off_text: (t "admin_panel.off_switch") } %>
+					data: { on_text: (t 'admin_panel.on_switch'), off_text: (t 'admin_panel.off_switch') } %>
 			    <% end %>
 			    <%= f.text_field :maintenance_title, :label => (t 'admin_panel.maintenance_title'), class:'input-xlarge' %>
 			    <%= f.text_area :maintenance_message, :label => (t 'admin_panel.maintenance_message'), class:'input-block-level'  %>
