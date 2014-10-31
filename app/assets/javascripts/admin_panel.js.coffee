@@ -2,5 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
+
+attachHandler = ->
 	$(".bootstrap_switch").bootstrapSwitch('size', 'large');
+		
+$(document).ready attachHandler
+$(document).on "page:load", attachHandler

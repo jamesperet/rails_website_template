@@ -9,18 +9,21 @@ A template for creating rails websites that includes the following:
 * SummerNote editor
 * Image upload/File System
 * Translation (pt-BR, EN)
+* Contact System
+- Maintaince Mode
 
 Other features are still under development:
 
-* Contact System
 * Email System (PaperClip + MailChimp + Mandrill)
+- Tests
+
 * Search System
 * Wiki/Codex
 - Portfolio
 - Store
 - Inventory
 - Module Controller
-- Maintaince Mode
+
 
 ## Todo's
 
@@ -38,10 +41,3 @@ Other features are still under development:
 - [GoldTone](http://goldtone.com) (Under Development)
 - [benjaminperet](http://benjaminperet.com) (Under Development)
 - [High Effects](http://higheffects.com.br) (Upgrade/Rewrite)
-
-## Configurations
-
-* Maintaince Mode (Boolean)
-* Maintance Mode Message
-
-* Modules
