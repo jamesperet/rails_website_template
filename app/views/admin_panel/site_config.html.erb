@@ -6,22 +6,24 @@
 		</div>
 		<%= bootstrap_flash %>
 		<div class="media thumbnail" style="padding: 10px; padding-bottom: 5px;">
-			<%= simple_form_for(@config, :url => config_update_path, :method => 'POST', :html => { class: ''}) do |f| %>
-			  <%= f.error_notification %>
+			<%= bootstrap_form_for(@config, :url => config_update_path, :method => 'POST') do |f| %>
+			  <%= f.alert_message "Please fix the errors below." %>
 
 			  <div class="form-inputs">
-			    <%= f.input :website_name, :label => (t 'admin_panel.website_name'), :input_html => {:class => 'input-large'} %>
-			    <%= f.input :tagline, :label => (t 'admin_panel.tagline'), :input_html => { :class => 'input-xxlarge'} %>
-			    <%= f.input :default_language, collection: ["en", "pt-BR"], prompt:"Select default language",  :label => (t 'admin_panel.default_language'), hint: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
-			    <%= f.input :contact_email, :label => (t 'admin_panel.contact_email'), :input_html => {:class => 'input-large'} %>
-			    <%= f.input :maintenance_mode, :label => (t 'admin_panel.maintenance_mode') %>
-			    <%= f.input :maintenance_title, :label => (t 'admin_panel.maintenance_title') %>
-			    <%= f.input :maintenance_message, :label => (t 'admin_panel.maintenance_message'), :input_html => {:class => 'input-large'}  %>
+			    <%= f.text_field :website_name, :label => (t 'admin_panel.website_name'), class:'input-xlarge' %>
+			    <%= f.text_field :tagline, :label => (t 'admin_panel.tagline'), class: 'input-xxlarge' %>
+			    <%= f.select :default_language, ["en", "pt-BR"],  :label => (t 'admin_panel.default_language'), help: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
+			    <%= f.email_field :contact_email, :label => (t 'admin_panel.contact_email'), class:'input-xlarge' %>
+			    <%= f.form_group :maintenance_mode do %>
+			    		<%= f.check_box :maintenance_mode, :label => (t 'admin_panel.maintenance_mode') %>
+			    <% end %>
+			    <%= f.text_field :maintenance_title, :label => (t 'admin_panel.maintenance_title'), class:'input-xlarge' %>
+			    <%= f.text_area :maintenance_message, :label => (t 'admin_panel.maintenance_message'), class:'input-block-level'  %>
 
 			  </div>
 
 			  <div class="form-actions" style="margin-left: -10px; margin-right: -10px; margin-bottom: -30px;">
-			    <%= f.button :submit, (t 'admin_panel.update_config_btn'), :class => 'btn btn-success' %>
+			    <%= f.submit (t 'admin_panel.update_config_btn'), class: 'btn btn-success' %>
 			  </div>
 			<% end %>
 		</div>
