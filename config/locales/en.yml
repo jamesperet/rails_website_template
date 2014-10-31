@@ -249,3 +249,14 @@ en:
     send: Send
     error: Please correct the following errors
     by: by
+  registration:
+    sign_in: Sign In
+    sign_up: Sign Up
+    first_name: First Name
+    last_name: Last Name
+    password: Password
+    password_confirmation: Password Confirmation
+    sign_up_submit: Submit
+    sign_in_submit: Submit
+    forgot_password: Forgot your password?
+    remember_me: Remember me

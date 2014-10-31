@@ -27,7 +27,6 @@ Other features are still under development:
 
 ## Todo's
 
-* Authentication layout
 * post form layout
 * edit account layout
 * make admin button

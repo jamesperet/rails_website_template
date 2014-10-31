@@ -251,3 +251,14 @@ pt-BR:
     send: Enviar
     error: Favor corrigir os erros abaixo
     by: por
+  registration:
+    sign_in: Entrar
+    sign_up: Cadastro
+    first_name: Nome
+    last_name: Sobrenome
+    password: Senha
+    password_confirmation: Confirmar Senha
+    sign_up_submit: Enviar
+    sign_in_submit: Enviar
+    forgot_password: Esqueceu a senha?
+    remember_me: Lembrar Senha
