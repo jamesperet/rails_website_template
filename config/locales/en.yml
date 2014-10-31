@@ -223,6 +223,9 @@ en:
     contact_messages: Contact Messages
     new: New
     messages: Messages
+    maintenance_mode: Maintenance Mode
+    maintenance_title: Maintenance Page Title
+    maintenance_message: Maintenance Page Message
   nav:
     admin_panel: Admin Panel
     account: Account

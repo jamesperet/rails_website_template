@@ -2,6 +2,9 @@ class AdminPanelController < ApplicationController
   
   layout 'admin'
   
+  def maintenance_mode
+  end
+  
   def index
     redirect_to admin_dashboard_path
   end
@@ -49,7 +52,7 @@ class AdminPanelController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
-      params.require(:info).permit(:website_name, :tagline, :contact_email, :default_language)
+      params.require(:info).permit(:website_name, :tagline, :contact_email, :default_language, :maintenance_mode, :maintenance_title, :maintenance_message)
     end
   
 end

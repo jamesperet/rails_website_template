@@ -14,6 +14,9 @@
 			    <%= f.input :tagline, :label => (t 'admin_panel.tagline'), :input_html => { :class => 'input-xxlarge'} %>
 			    <%= f.input :default_language, collection: ["en", "pt-BR"], prompt:"Select default language",  :label => (t 'admin_panel.default_language'), hint: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
 			    <%= f.input :contact_email, :label => (t 'admin_panel.contact_email'), :input_html => {:class => 'input-large'} %>
+			    <%= f.input :maintenance_mode, :label => (t 'admin_panel.maintenance_mode') %>
+			    <%= f.input :maintenance_title, :label => (t 'admin_panel.maintenance_title') %>
+			    <%= f.input :maintenance_message, :label => (t 'admin_panel.maintenance_message'), :input_html => {:class => 'input-large'}  %>
 
 			  </div>
 

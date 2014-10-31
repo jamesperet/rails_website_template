@@ -3,6 +3,8 @@ RailsWebsiteTemplate::Application.routes.draw do
   resources :contact_messages, path: '/contact'
 
   resources :uploads
+  
+  get "maintenance_mode" => "admin_panel#maintenance_mode", :as => :maintenance_mode
 
   get "admin/dashboard" => "admin_panel#dashboard", :as => :admin_dashboard
   get "admin" => "admin_panel#index"

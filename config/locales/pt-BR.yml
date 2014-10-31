@@ -225,6 +225,9 @@ pt-BR:
     contact_messages: Mensagens de Contato
     new: Nova
     messages: Mensagens
+    maintenance_mode: Modo de Manutenção
+    maintenance_title: Titulo da página de manutenção
+    maintenance_message: Mensagem de manutenção
   nav:
     admin_panel: Painel de Controle
     account: Conta
