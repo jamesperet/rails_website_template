@@ -4,7 +4,7 @@ attachRatingHandler = ->
 
   # to set summernote object
   # You should change '#post_content' to your textarea input id
-  summer_note = $('#blog_post_content')
+  summer_note = $('#post_content')
 
   # to call summernote editor
   summer_note.summernote

@@ -1,16 +1,27 @@
-<%= simple_form_for(@blog_post) do |f| %>
-  <%= f.error_notification %>
+<%= bootstrap_form_for(@blog_post) do |f| %>
+  <%= f.alert_message "Please fix the errors below."%>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :slug %>
-    <%= f.input :description %>
-    <%= f.file_field :image %>
-    <%= f.input :content, class: 'summernote', id: 'post_content' %>
-    <%= f.input :published %>
-  </div>
+<div class="controls controls-row">
+	<%= f.form_group :title, class: "span4", style: 'margin-left: 0px;' do %>
+	    <%= f.text_field :title, class: 'input-block-level' %>
+	<% end %>
+	<%= f.form_group :slug, class: "span3" do %>
+	    <%= f.text_field :slug, class: 'input-block-level' %>
+	<% end %>
+	<%= f.form_group :description, class: "span5" do %>
+	    <%= f.text_field :description, class: 'input-block-level' %>
+	<% end %>
+</div>
+
+
+	<div class="form-inputs">
+		
+		<%= f.file_field :image %>
+		<%= f.text_area :content, class: 'summernote', id: 'post_content' %>
+		<%= f.check_box :published %>
+	</div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit %>
   </div>
 <% end %>
