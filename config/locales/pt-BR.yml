@@ -228,6 +228,8 @@ pt-BR:
     maintenance_mode: Modo de Manutenção
     maintenance_title: Titulo da página de manutenção
     maintenance_message: Mensagem de manutenção
+    on_switch: Ligado
+    off_switch: Desligado
   nav:
     admin_panel: Painel de Controle
     account: Conta
