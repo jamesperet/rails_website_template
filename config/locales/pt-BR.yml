@@ -235,6 +235,7 @@ pt-BR:
     make_admin_success: O usuário agora tem acesso de administrador.
     unmake_admin_success: O usuário não tem mais acesso de administrador.
     make_admin_error: A permissão não foi alterada.
+    permission_denied: Você não tem permissão para acessar aquela página!
   nav:
     admin_panel: Painel de Controle
     account: Conta

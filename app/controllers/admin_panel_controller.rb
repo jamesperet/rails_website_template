@@ -2,6 +2,8 @@ class AdminPanelController < ApplicationController
   
   layout 'admin'
   
+  before_filter :authenticate_user
+  
   def maintenance_mode
   end
   
@@ -73,6 +75,10 @@ class AdminPanelController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
       params.require(:info).permit(:website_name, :tagline, :contact_email, :default_language, :maintenance_mode, :maintenance_title, :maintenance_message)
+    end
+  
+    def authenticate_user 
+      redirect_to root_path, alert: (t 'admin_panel.permission_denied') unless current_user && current_user.admin?
     end
   
 end

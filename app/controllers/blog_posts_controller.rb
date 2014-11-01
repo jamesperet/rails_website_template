@@ -79,6 +79,6 @@ class BlogPostsController < ApplicationController
     end
     
     def authenticate_user 
-      redirect_to root_path, alert: 'You dont have permission to access that page!' unless current_user && current_user.admin?
+      redirect_to root_path, alert: (t 'admin_panel.permission_denied') unless current_user && current_user.admin?
     end
 end

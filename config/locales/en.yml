@@ -233,6 +233,7 @@ en:
     make_admin_success: The user was grated admin access.
     unmake_admin_success: The user lost his admin access.
     make_admin_error: User permission was not altered.
+    permission_denied: You dont have permission to access that page!
   nav:
     admin_panel: Admin Panel
     account: Account

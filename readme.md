@@ -28,6 +28,8 @@ Other features are still under development:
 ## Todo's
 
 * edit account layout
+* devise forgot pasword layout
+* devise change password layout
 
 * Install instructions
 * Heroku Deploy button
