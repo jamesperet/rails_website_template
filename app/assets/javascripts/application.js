@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-switch
+//= require jasny-bootstrap
 //= require summernote
 //= require turbolinks
 //= require_tree .

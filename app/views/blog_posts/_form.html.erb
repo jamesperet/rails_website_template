@@ -1,27 +1,46 @@
-<%= bootstrap_form_for(@blog_post) do |f| %>
+<div class="media thumbnail" style="padding: 0px">
+<%= bootstrap_form_for(@blog_post, html: {style: 'margin-bottom: 0px;', class: 'form-bordered'}) do |f| %>
   <%= f.alert_message "Please fix the errors below."%>
 
-<div class="controls controls-row">
-	<%= f.form_group :title, class: "span4", style: 'margin-left: 0px;' do %>
-	    <%= f.text_field :title, class: 'input-block-level' %>
-	<% end %>
-	<%= f.form_group :slug, class: "span3" do %>
-	    <%= f.text_field :slug, class: 'input-block-level' %>
-	<% end %>
-	<%= f.form_group :description, class: "span5" do %>
-	    <%= f.text_field :description, class: 'input-block-level' %>
+	<div style="padding: 10px;">
+		<div class="controls controls-row">
+			<%= f.form_group :title, class: "span5", style: 'margin-left: 0px;' do %>
+			    <%= f.text_field :title, label: (t 'blog.title'), class: 'input-block-level', required: true %>
+			<% end %>
+			<%= f.form_group :slug, class: "span4" do %>
+			    <%= f.text_field :slug, label: (t 'blog.slug'), class: 'input-block-level', required: true %>
+			<% end %>
+
+			<div class="span2">
+				<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-top: 5px;">
+					<div class="fileupload-preview thumbnail" style="width: 230px; height: 145px;"><%=  image_tag @blog_post.image.to_s if @blog_post.image? %></div>
+				</div>
+				<span class="btn btn-default btn-file btn-mini">
+					<span class="fileinput-new"></span>
+					<span class="fileinput-exists"></span>
+					<%= f.file_field :image, class: 'hidden', label: (t 'blog.select_image') %>
+				</span>
+			</div>
+	
+		</div>
+
+			<%= f.form_group :description, class: "span9", style: 'margin-left: 0px; margin-top: -130px;' do %>
+			    <%= f.text_field :description, label: (t 'blog.description'), class: 'input-block-level', required: true %>
+			<% end %>
+
+			<%= f.form_group :published, class: "span9 bootstrap_switch_group", style: 'margin-left: 0px; margin-top: -50px;' do %>
+				<%= f.check_box :published, class: 'bootstrap_switch', label: (t 'blog.visibility'),data: { on_text: (t 'blog.publish'), off_text: (t 'blog.unpublish') } %>
+			<% end %>
+	
+	
+	
+		<%= f.text_area :content, label: (t 'blog.content'), class: 'summernote', id: 'post_content', hide_label: :true %>
+	</div>
+		<div class="form-actions" style="margin: 0px;">
+			<%= f.submit (t 'blog.submit'), class: 'btn btn-success' %>
+			<%= link_to 'Show', @blog_post, class: 'btn' if action_name == 'edit' %>
+			<%= link_to (t 'blog.back'), admin_posts_path, class: 'btn btn-link' %>
+		</div>
+
 	<% end %>
 </div>
-
-
-	<div class="form-inputs">
-		
-		<%= f.file_field :image %>
-		<%= f.text_area :content, class: 'summernote', id: 'post_content' %>
-		<%= f.check_box :published %>
-	</div>
-
-  <div class="form-actions">
-    <%= f.submit %>
-  </div>
-<% end %>

@@ -241,6 +241,18 @@ pt-BR:
   blog:
     by: Por
     ago: atras
+    publish: Publico
+    unpublish: Privado
+    visibility: Visibilidade
+    new_post: Novo Artigo
+    edit_post: Editar Artigo
+    title: Título
+    slug: Slug
+    select_image: Selecionar Imagem
+    description: Descrição
+    content: Conteúdo
+    submit: Salvar
+    back: Voltar
   contact:
     contact: Contato
     contact_messages: Mensagens de Contato

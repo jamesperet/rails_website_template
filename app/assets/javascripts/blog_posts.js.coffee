@@ -2,6 +2,8 @@
 
 attachRatingHandler = ->
 
+  $(".bootstrap_switch").bootstrapSwitch('size', 'large');
+
   # to set summernote object
   # You should change '#post_content' to your textarea input id
   summer_note = $('#post_content')

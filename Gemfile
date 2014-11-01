@@ -37,6 +37,7 @@ gem 'flatstrap-rails'
 gem 'font-awesome-rails'
 gem 'bootstrap-timepicker-rails'
 gem "bootstrap-switch-rails"
+gem 'jasny_bootstrap_extension_rails'
 gem 'simple_form'
 gem 'bootstrap_form'
 gem 'friendly_id', '~> 5.0.0'
