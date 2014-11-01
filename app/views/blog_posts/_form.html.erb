@@ -13,13 +13,14 @@
 
 			<div class="span2">
 				<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-top: 5px;">
-					<div class="fileupload-preview thumbnail" style="width: 230px; height: 145px;"><%=  image_tag @blog_post.image.to_s if @blog_post.image? %></div>
+					<div class="fileupload-preview thumbnail" data-trigger="fileinput" style="width: 230px; height: 145px;"><%=  image_tag @blog_post.image.to_s if @blog_post.image? %></div>
+					<span class="btn btn-default btn-file btn-mini" >
+						<span class="fileinput-new"></span>
+						<span class="fileinput-exists"></span>
+						<%= f.file_field :image, class: 'hidden', label: (t 'blog.select_image') %>
+					</span>
 				</div>
-				<span class="btn btn-default btn-file btn-mini">
-					<span class="fileinput-new"></span>
-					<span class="fileinput-exists"></span>
-					<%= f.file_field :image, class: 'hidden', label: (t 'blog.select_image') %>
-				</span>
+				
 			</div>
 	
 		</div>

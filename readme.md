@@ -27,7 +27,6 @@ Other features are still under development:
 
 ## Todo's
 
-* post form layout
 * edit account layout
 * make admin button
 
@@ -40,3 +39,4 @@ Other features are still under development:
 - [GoldTone](http://goldtone.com) (Under Development)
 - [benjaminperet](http://benjaminperet.com) (Under Development)
 - [High Effects](http://higheffects.com.br) (Upgrade/Rewrite)
+- [Velvet Design](http://www.velvetdesign.com.br)
