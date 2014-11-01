@@ -34,6 +34,13 @@
 					  <span>Admin</span></span>
 				  </div>
 			  <% end %>
+			  <div class="pull-right">
+				<% if !user.admin %>
+				  	<%= link_to (t 'admin_panel.make_admin'), make_admin_path(user.id), class: 'btn btn-mini', style: 'width: 100px; margin-top: 6px; line-height: 17px;' %>
+				<% else %>
+					<%= link_to (t 'admin_panel.unmake_admin'), make_admin_path(user.id), class: 'btn btn-mini btn-danger', style: 'width: 100px; margin-top: 6px; line-height: 17px;' %>
+				<% end %>
+			  </div>
 			</div>
 		<% end %>
 	</div>

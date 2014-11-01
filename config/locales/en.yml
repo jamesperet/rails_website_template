@@ -228,6 +228,11 @@ en:
     maintenance_message: Maintenance Page Message
     on_switch: Disable
     off_switch: Enable
+    make_admin: Grant admin access
+    unmake_admin: Take away admin access
+    make_admin_success: The user was grated admin access.
+    unmake_admin_success: The user lost his admin access.
+    make_admin_error: User permission was not altered.
   nav:
     admin_panel: Admin Panel
     account: Account

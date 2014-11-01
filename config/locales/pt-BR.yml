@@ -230,6 +230,11 @@ pt-BR:
     maintenance_message: Mensagem de manutenção
     on_switch: Ligado
     off_switch: Desligado
+    make_admin: Conceder acesso de administrador
+    unmake_admin: Tirar acesso de administrador
+    make_admin_success: O usuário agora tem acesso de administrador.
+    unmake_admin_success: O usuário não tem mais acesso de administrador.
+    make_admin_error: A permissão não foi alterada.
   nav:
     admin_panel: Painel de Controle
     account: Conta

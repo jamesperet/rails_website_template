@@ -28,7 +28,6 @@ Other features are still under development:
 ## Todo's
 
 * edit account layout
-* make admin button
 
 * Install instructions
 * Heroku Deploy button

@@ -24,7 +24,7 @@ class AdminPanelController < ApplicationController
   end
 
   def users
-    @users = User.all
+    @users = User.order('created_at DESC').all
   end
   
   def files
@@ -44,6 +44,26 @@ class AdminPanelController < ApplicationController
       else
         format.html { render action: 'site_config' }
         format.json { render json: @upload.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def make_admin
+    @user = User.find(params[:id])
+    if @user.admin == true
+      @user.admin = false
+      status = "admin_panel.unmake_admin_success"
+    else
+      @user.admin = true
+      status = "admin_panel.make_admin_success"
+    end
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to admin_users_path, notice: (t status) }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to admin_users_path, alert: (t 'admin_panel.make_admin_error') }
+        format.json { head :no_content }
       end
     end
   end

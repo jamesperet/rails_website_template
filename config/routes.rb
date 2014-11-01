@@ -13,6 +13,7 @@ RailsWebsiteTemplate::Application.routes.draw do
   get "contact_message/:id/mark_contact_message_as_readed" => "contact_messages#readed", :as => :mark_contact_message_as_readed
   get "contact_message/:id/mark_contact_message_as_unread" => "contact_messages#unread", :as => :mark_contact_message_as_unread
   get "admin/users" => "admin_panel#users", :as => :admin_users
+  get "admin/users/:id/make_admin" => "admin_panel#make_admin", :as => :make_admin
   get "admin/config" => "admin_panel#site_config", :as => :admin_config
   post "admin/config/update" => "admin_panel#site_config_update", :as => :config_update
   
