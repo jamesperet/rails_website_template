@@ -27,7 +27,10 @@ Other features are still under development:
 
 ## Todo's
 
+* contact message sed email
+* production emails with mandrill
 * edit account layout
+* contact message layout
 * devise forgot pasword layout
 * devise change password layout
 

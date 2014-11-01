@@ -17,6 +17,7 @@ class ContactMessagesController < ApplicationController
     @contact_message.unread = true
     respond_to do |format|
       if @contact_message.save
+        UserMailer.contact_message(@contact_message).deliver 
         format.html { redirect_to @contact_message, notice: 'Contact message was successfully created.' }
         format.json { render action: 'show', status: :created, location: @contact_message }
       else
