@@ -11,11 +11,13 @@ A template for creating rails websites that includes the following:
 * Translation (pt-BR, EN)
 * Contact System
 - Maintaince Mode
+* Email System (PaperClip + Mandrill)
 
 Other features are still under development:
 
-* Email System (PaperClip + MailChimp + Mandrill)
+- Log
 - Tests
+
 
 * Search System
 * Wiki/Codex
@@ -23,12 +25,11 @@ Other features are still under development:
 - Store
 - Inventory
 - Module Controller
+- geo location/maps
 
 
 ## Todo's
 
-* contact message sed email
-* production emails with mandrill
 * edit account layout
 * contact message layout
 * devise forgot pasword layout

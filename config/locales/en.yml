@@ -259,6 +259,8 @@ en:
     content: Content
     submit: Save
     back: Back
+    latest_posts: Latest Posts
+    more_posts: More posts
   contact:
     contact: Contact
     contact_messages: Contact Messages

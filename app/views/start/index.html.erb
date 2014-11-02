@@ -2,3 +2,26 @@
   <h1><%= @config.website_name %></h1>
   <p><%= @config.tagline %></p>
 </div>
+
+<div class="page-header">
+  <h1><%= t 'blog.latest_posts'%> <%= link_to (t 'blog.more_posts'), blog_path, class: 'btn btn-large pull-right' %></h1>
+</div>
+
+<ul class="thumbnails">
+    <% @blog_posts.each do |post| %>
+	   <li class="span3">
+	     <div class="thumbnail" style="height: 300px;">
+		  <% if post.image.file != nil %>
+		  	<%= image_tag post.image.thumb.to_s %>
+		  <% else %>
+	       	<img src="http://placehold.it/300x200" alt="">
+		  <% end %>
+	       <h3><%= link_to post.title, post_path(post) %></h3>
+	       <p><%= post.description %></p>
+	     </div>
+	   </li>
+    <% end %>
+</ul>
+
+
+<br>
