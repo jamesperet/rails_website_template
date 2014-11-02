@@ -286,3 +286,14 @@ pt-BR:
     sign_in_submit: Enviar
     forgot_password: Esqueceu a senha?
     remember_me: Lembrar Senha
+    reset_password_submit: Resetar Senha
+    change_your_password: Criar nova senha
+    new_password: Nova Senha
+    confirm_your_new_password: Confirmar Nova Senha
+    change_password: Salvar Senha
+    edit_profile: Editar Informações de Registro
+    current_password: Senha Atual
+    update: Atualizar
+    cancel_account: Cancelar Conta
+    cancel_confirmation: Você tem certeza que deseja cancelar sua conta?
+    edit_password: Editar senha

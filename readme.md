@@ -17,7 +17,7 @@ Other features are still under development:
 
 - Log
 - Tests
-
+- Background processing (redis)
 
 * Search System
 * Wiki/Codex
@@ -26,15 +26,19 @@ Other features are still under development:
 - Inventory
 - Module Controller
 - geo location/maps
-
+- Help
 
 ## Todo's
 
-* edit account layout
-* contact message layout
-* devise forgot pasword layout
-* devise change password layout
+* Dashboard Contact_Messege Count / new messages
+* fix admin panel navbar
 
+
+* new admin email 
+* Invite user/admin
+* admin panel tour
+
+* rewrite readme file
 * Install instructions
 * Heroku Deploy button
 

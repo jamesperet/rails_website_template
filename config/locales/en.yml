@@ -284,3 +284,9 @@ en:
     sign_in_submit: Submit
     forgot_password: Forgot your password?
     remember_me: Remember me
+    reset_password_submit: Reset Password
+    change_your_password: Change your password
+    new_password: New Password
+    confirm_your_new_password: Confirm New Password
+    change_password: Save Password
+    edit_password: Edit password

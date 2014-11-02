@@ -37,11 +37,11 @@
 	
 		<%= f.text_area :content, label: (t 'blog.content'), class: 'summernote', id: 'post_content', hide_label: :true %>
 	</div>
-		<div class="form-actions" style="margin: 0px;">
-			<%= f.submit (t 'blog.submit'), class: 'btn btn-success' %>
-			<%= link_to 'Show', @blog_post, class: 'btn' if action_name == 'edit' %>
-			<%= link_to (t 'blog.back'), admin_posts_path, class: 'btn btn-link' %>
-		</div>
+	<div class="form-actions" style="margin: 0px;">
+		<%= f.submit (t 'blog.submit'), class: 'btn btn-success' %>
+		<%= link_to 'Show', @blog_post, class: 'btn' if action_name == 'edit' %>
+		<%= link_to (t 'blog.back'), admin_posts_path, class: 'btn btn-link' %>
+	</div>
 
 	<% end %>
 </div>
