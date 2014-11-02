@@ -15,6 +15,7 @@
 			    <%= f.text_field :website_link, :label => (t 'admin_panel.website_link'), class:'input-xlarge' %>
 			    <%= f.select :default_language, ["en", "pt-BR"],  :label => (t 'admin_panel.default_language'), help: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
 			    <%= f.email_field :contact_email, :label => (t 'admin_panel.contact_email'), class:'input-xlarge' %>
+			    <%= f.email_field :server_email, :label => (t 'admin_panel.server_email'), class:'input-xlarge' %>
 			    <hr>
 			    <%= f.form_group :maintenance_mode, class: 'bootstrap_switch_group' do %>
 			    		<%= f.check_box :maintenance_mode, :label => (t 'admin_panel.maintenance_mode'), class: 'bootstrap_switch',

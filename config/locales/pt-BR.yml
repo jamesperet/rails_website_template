@@ -223,6 +223,7 @@ pt-BR:
     default_language: Lingua padrão
     update_config_btn: Salvar Configurações
     contact_email: Email de contato
+    server_email: Email do servidor
     contact_messages: Mensagens de Contato
     new: Nova
     messages: Mensagens

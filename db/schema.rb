@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141101234157) do
     t.string   "maintenance_title"
     t.text     "maintenance_message"
     t.string   "website_link"
+    t.string   "server_email"
   end
 
   create_table "uploads", force: true do |t|
