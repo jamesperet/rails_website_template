@@ -1,0 +1,8 @@
+pt-BR:
+  reset_password:
+    hello: Olá
+    reset_text: Alguem requisitou um link para troca de senha. Você pode fazer isso seguindo o link abaixo.
+    change_my_password: Trocar minha senha
+    not_requested: "Se você não solicitou a mudança de senha, por favor ignore este email."
+    password_will_not_change: Sua senha não vai mudar a não ser que você crie uma nova.
+    
