@@ -221,8 +221,9 @@ Email on Acid - http://www.emailonacid.com/blog/details/C18/doctype_-_the_black_
 
 		<!-- End example table -->
 
-		<p><%= @msg.content %></p>
-		
+		<p><%= simple_format @msg.content %></p>
+		<hr>
+		<p><i>Mensagem enviada pelo site <%= @config.website_link != nil ? (link_to @config.website_name, @config.website_link) : @config.website_name  %>.</i></p>
 		</td>
 	</tr>
 	</table>

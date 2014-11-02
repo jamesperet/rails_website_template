@@ -218,6 +218,7 @@ pt-BR:
     language_hint: Espere alguns segundos para as mudanças ocorrerem
     config_update_success: As configurações foram atualizadas com sucesso.
     website_name: Nome do Site
+    website_link: Link do Site
     tagline: Tagline
     default_language: Lingua padrão
     update_config_btn: Salvar Configurações
@@ -269,6 +270,8 @@ pt-BR:
     send: Enviar
     error: Favor corrigir os erros abaixo
     by: por
+    delivered: Mensagem enviada com sucesso.
+    not_delivered: Ocorreu um erro e a mensagem não enviada.
   registration:
     sign_in: Entrar
     sign_up: Cadastro

@@ -215,6 +215,7 @@ en:
     configurations: Configurations
     language_hint: Wait a few seconds for changes to take effect
     website_name: Website Name
+    website_link: Website URL
     tagline: Tagline
     default_language: Default Language
     update_config_btn: Update Config
@@ -267,6 +268,8 @@ en:
     send: Send
     error: Please correct the following errors
     by: by
+    delivered: Message sent!
+    not_delivered: There was an error and the message was not sent.
   registration:
     sign_in: Sign In
     sign_up: Sign Up

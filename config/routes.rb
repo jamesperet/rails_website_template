@@ -1,6 +1,6 @@
 RailsWebsiteTemplate::Application.routes.draw do
   
-  resources :contact_messages, path: '/contact'
+  resources :contact_messages, path: '/contact', :as => :contact_messages
 
   resources :uploads
   

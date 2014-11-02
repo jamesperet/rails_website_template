@@ -74,7 +74,7 @@ class AdminPanelController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_params
-      params.require(:info).permit(:website_name, :tagline, :contact_email, :default_language, :maintenance_mode, :maintenance_title, :maintenance_message)
+      params.require(:info).permit(:website_name, :website_link, :tagline, :contact_email, :default_language, :maintenance_mode, :maintenance_title, :maintenance_message)
     end
   
     def authenticate_user 

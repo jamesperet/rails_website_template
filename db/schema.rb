@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031021236) do
+ActiveRecord::Schema.define(version: 20141101234157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141031021236) do
     t.boolean  "maintenance_mode"
     t.string   "maintenance_title"
     t.text     "maintenance_message"
+    t.string   "website_link"
   end
 
   create_table "uploads", force: true do |t|
