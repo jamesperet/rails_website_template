@@ -15,6 +15,8 @@ class AdminPanelController < ApplicationController
     @users = User.all
     @posts = BlogPost.all
     @files = Upload.all
+    @contact_messages = ContactMessage.all
+    @new_messages = @contact_messages.find_all_by_unread(true)
   end
 
   def posts

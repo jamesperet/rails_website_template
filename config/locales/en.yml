@@ -224,7 +224,9 @@ en:
     config_update_success: Configurations saved successfully
     contact_messages: Contact Messages
     new: New
+    new_messages: New
     messages: Messages
+    message: Message
     maintenance_mode: Maintenance Mode
     maintenance_title: Maintenance Page Title
     maintenance_message: Maintenance Page Message
@@ -236,6 +238,7 @@ en:
     unmake_admin_success: The user lost his admin access.
     make_admin_error: User permission was not altered.
     permission_denied: You dont have permission to access that page!
+    contact_messages: Messages
   nav:
     admin_panel: Admin Panel
     account: Account
