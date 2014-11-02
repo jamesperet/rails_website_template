@@ -30,10 +30,6 @@ Other features are still under development:
 
 ## Todo's
 
-* Dashboard Contact_Messege Count / new messages
-* fix admin panel navbar
-
-
 * new admin email 
 * Invite user/admin
 * admin panel tour

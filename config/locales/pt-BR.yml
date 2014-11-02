@@ -205,7 +205,7 @@ pt-BR:
       short: ! '%d de %B, %H:%M'
     pm: ''
   admin_panel:
-    dashboard: Painel
+    dashboard: Dashboard
     files: Arquivos
     users: Usuários
     posts: Artigos
