@@ -24,6 +24,10 @@ class AdminPanelController < ApplicationController
   def contact_messages
     @contact_messages = ContactMessage.order('created_at DESC').all
   end
+  
+  def show_contact_message
+    @msg = ContactMessage.find(params[:id])
+  end
 
   def users
     @users = User.order('created_at DESC').all

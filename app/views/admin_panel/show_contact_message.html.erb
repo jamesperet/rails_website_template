@@ -1,0 +1,37 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="page-header">
+		  <h1>
+			 	 <%= @msg.title %>
+				 
+				 <div class="btn-group pull-right" >
+				 	<%= link_to (t 'nav.back'), admin_contact_messages_path, class: 'btn' %>
+			 	 </div>
+				 
+	   			 <div class="btn-group pull-right" style="margin-right: 10px;">
+	   				<% if @msg.unread %>
+	   		      		<%= link_to '<i class="icon-eye-open"></i>'.html_safe, mark_contact_message_as_readed_path(@msg), :class => 'btn' %>
+	   				<% else %>
+	   					<%= link_to '<i class="icon-eye-close"></i>'.html_safe, mark_contact_message_as_unread_path(@msg), :class => 'btn' %>
+	   				<% end %>
+	   		      	<%= link_to '<i class="icon-remove"></i>'.html_safe, @msg, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+	   			 </div>
+				 
+		  </h1>
+		</div>
+		<%= bootstrap_flash %>
+ 	      <span style="margin-top: -15px;"><small><%= t "contact.by" %> 
+ 		     <% if @msg.user != nil %>
+ 		    		<%= @msg.user.full_name %>,
+ 			<% else %>
+ 				<%= @msg.email %>,
+ 			<% end %>
+ 			<%= time_ago_in_words(@msg.created_at) %> <%= t "blog.ago" %>
+ 	      </small></span>
+	    
+	    
+	    <p style="margin-top: 15px;"><%= @msg.content %></p>
+		
+	</div>
+</div>
