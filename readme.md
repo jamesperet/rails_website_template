@@ -17,11 +17,18 @@ A template for creating rails websites that includes the following:
 
 1. Clone the project: ```https://github.com/jamesperet/rails_website_template.git```
 2. Create *postgres* databases for **development** and **test** enviorments.
-3. Configure the databases in ```config/enviorments/development.rb``` and ```config/enviorments/test.rb```
+3. Configure the databases in ```config/database.yml```
 4. Run  ```rake db:migrate```
 5. Run  ```rake bootstrap:all```
 6. Start the server: ```rails server -p 3000```
 7. Login as ```admin@website.com``` with the password ```12345678```
+
+## Heroku Deploy
+
+1. Create a new heroku app: ```heroku create new-app-name```
+2. Run ```figaro heroku:set -e production``` to set enviorment variables on heroku
+3. Run ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
+4. Run ```git push heroku master``` to deploy the repo
 
 ## Todo's
 
