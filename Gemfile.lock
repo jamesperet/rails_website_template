@@ -228,7 +228,6 @@ DEPENDENCIES
   sass-rails
   sdoc
   simple_form
-  sprockets-rails
   summernote-rails
   therubyracer
   turbolinks

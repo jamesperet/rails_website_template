@@ -19,7 +19,6 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   if Rails.env.production?
       # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility if using fog: 
-      include Sprockets::Rails::Helper   
       storage :fog
   end
   

@@ -17,8 +17,7 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   if Rails.env.production?
-      # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility if using fog: 
-      include Sprockets::Helpers::RailsHelper    
+      # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility if using fog:  
       storage :fog
   end
 
