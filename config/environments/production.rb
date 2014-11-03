@@ -28,6 +28,7 @@ RailsWebsiteTemplate::Application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+  config.assets.initialize_on_precompile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -71,6 +72,8 @@ RailsWebsiteTemplate::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+  
+  
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
