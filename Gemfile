@@ -29,7 +29,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-#gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'sass-rails'
