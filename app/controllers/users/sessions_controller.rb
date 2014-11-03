@@ -1,4 +1,4 @@
-class users::sessionsController < Devise::sessionsController
+class Users::SessionsController < Devise::SessionsController
   
   layout 'auth'
   

@@ -31,6 +31,8 @@ A template for creating rails websites that includes the following:
 4. Add the heroku postgre addon:  ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
 5. Commit changes: ```git commit -a -m "commit message"```
 6. Push to heroku:  ```git push heroku master``` to deploy the repo
+7. Migrate the database: ```heroku run rake db:migrate```
+8. Create the initial config and admin user: ```heroku run rake bootstrap:all```
 
 ## Todo's
 
