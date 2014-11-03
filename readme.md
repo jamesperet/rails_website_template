@@ -26,9 +26,11 @@ A template for creating rails websites that includes the following:
 ## Heroku Deploy
 
 1. Create a new heroku app: ```heroku create new-app-name```
-2. Run ```figaro heroku:set -e production``` to set enviorment variables on heroku
-3. Run ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
-4. Run ```git push heroku master``` to deploy the repo
+2. Run ```rake assets:precompile```
+3. Run ```figaro heroku:set -e production``` to copy env variables from ```config/application.yml```  and set them in heroku
+4. Add the heroku postgre addon:  ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
+5. Commit changes: ```git commit -a -m "commit message"```
+6. Push to heroku:  ```git push heroku master``` to deploy the repo
 
 ## Todo's
 
