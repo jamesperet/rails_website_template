@@ -58,3 +58,4 @@ production:
   pool: 5
   username: rails_website_template
   password:
+  schema_search_path: store, public
