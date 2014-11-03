@@ -50,6 +50,7 @@ gem "mini_magick"
 gem 'fog'
 gem "carrierwave"
 gem 'i18n'
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
