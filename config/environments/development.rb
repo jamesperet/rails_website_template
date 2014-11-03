@@ -40,7 +40,7 @@ RailsWebsiteTemplate::Application.configure do
   #     :user_name => ENV["MANDRILL_USERNAME"],
   #     :password  => ENV["MANDRILL_KEY"], # SMTP password is any valid API key
   #     :authentication => 'login', # Mandrill supports 'plain' or 'login'
-  #     :domain => ENV["DOMAIN_NAME"], # your domain to identify your server when connecting
+  #     :domain => ENV["DOMAIN_NAME"] # your domain to identify your server when connecting
   # }
   
 end
