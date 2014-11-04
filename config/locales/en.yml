@@ -292,4 +292,6 @@ en:
     new_password: New Password
     confirm_your_new_password: Confirm New Password
     change_password: Save Password
+    cancel_account: Delete Account
+    cancel_confirmation: Are you sure you want to delete your account permenantly?
     edit_password: Edit password

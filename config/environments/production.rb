@@ -80,7 +80,7 @@ RailsWebsiteTemplate::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.action_mailer.default_url_options = ENV["HEROKU_APP_URL"]
+  config.action_mailer.default_url_options = {:host => ENV["HEROKU_APP_URL"] }
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -93,7 +93,7 @@ RailsWebsiteTemplate::Application.configure do
         :enable_starttls_auto => true, # detects and uses STARTTLS
         :user_name => ENV["MANDRILL_USERNAME"],
         :password  => ENV["MANDRILL_KEY"], # SMTP password is any valid API key
-        :authentication => 'login', # Mandrill supports 'plain' or 'login'
+        :authentication => 'plain', # Mandrill supports 'plain' or 'login'
         :domain => ENV["DOMAIN_NAME"] # your domain to identify your server when connecting
   }
   
