@@ -38,11 +38,6 @@ A template for creating rails websites that includes the following:
 * Tests
 * Background processing (redis)
 * Search System
-* Wiki/Codex
-* Portfolio
-* Store
-* Inventory
-* Module Controller
 * geo location/maps
 * Help
 * new admin email 
@@ -51,6 +46,19 @@ A template for creating rails websites that includes the following:
 * rewrite readme file
 * Install instructions
 * Heroku Deploy button
+* Wiki/Codex
+* Portfolio
+* Store
+* Inventory
+* Module Controller
+
+## BUGS
+
+* Delete user account does not work
+* Wrong redirect after user account deletion
+* edit user page bugs (password)
+* show file page layout
+* page titles!
 
 ## Example Websites
 
