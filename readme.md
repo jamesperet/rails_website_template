@@ -34,6 +34,7 @@ A template for creating rails websites that includes the following:
 
 ## Todo's
 
+- Google Analytics
 * Log
 * Tests
 * Background processing (redis)

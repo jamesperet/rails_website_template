@@ -54,6 +54,14 @@ gem "carrierwave"
 gem 'i18n'
 gem 'rails_12factor', group: :production
 
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "webrat"
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
