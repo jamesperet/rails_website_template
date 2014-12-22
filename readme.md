@@ -52,6 +52,7 @@ A template for creating rails websites that includes the following:
 * Store
 * Inventory
 * Module Controller
+* Newsletter signup
 
 ## BUGS
 
