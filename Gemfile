@@ -57,7 +57,6 @@ gem 'rails_12factor', group: :production
 group :test do
   gem "rspec"
   gem "rspec-rails"
-  gem "webrat"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem "factory_girl_rails", "~> 4.0", :require => false

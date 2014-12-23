@@ -2,11 +2,19 @@ require 'factory_girl'
 
 FactoryGirl.define do 
   
-  factory :user, aliases: [:author, :owner] do
-    first_name    "John"
-    last_name     "Doe"
-    email         "johndoe@website.com"
-    password      "12345678"    
+  factory :user, aliases: [:author] do |f|
+    f.first_name "John"
+    f.last_name  "Doe"
+    f.email      "johndoe@website.com"
+    f.password   "12345678"
+    f.admin      false
+  end
+  
+  factory :admin, class: User do 
+    first_name "admin" 
+    email      "admin@website.com"
+    password   "12345678"
+    admin      true
   end
   
   factory :blog_post do |f|
@@ -15,7 +23,6 @@ FactoryGirl.define do
     f.content "foobar"  
     f.published true
     f.description "foobar is cool" 
-    association :author, factory: :user, last_name: "Doe", strategy: :build
   end 
   
 end  

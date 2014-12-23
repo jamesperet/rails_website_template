@@ -58,3 +58,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 require "#{Rails.root}/spec/factories.rb"
 
 
+
