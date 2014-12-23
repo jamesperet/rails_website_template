@@ -16,7 +16,7 @@ class AdminPanelController < ApplicationController
     @posts = BlogPost.all
     @files = Upload.all
     @contact_messages = ContactMessage.all
-    @new_messages = @contact_messages.find_all_by_unread(true)
+    @new_messages = @contact_messages.where(:unread => true)
   end
 
   def posts
