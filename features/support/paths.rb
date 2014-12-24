@@ -10,6 +10,9 @@ module NavigationHelpers
     when/the blog page/ 
       visit blog_path 
       
+    when/the admin blog posts page/
+      visit admin_posts_path
+      
     else
       raise "Can't find mapping from \"#{page_name}\" to a path."
     end

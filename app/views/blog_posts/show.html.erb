@@ -7,6 +7,6 @@
 
 
 <div style="margin-top: 40px; text-align: center;">
-<%= link_to (t "nav.edit"), edit_blog_post_path(@blog_post), :class => 'btn btn-small' if user_signed_in? %>	
+<%= link_to (t "nav.edit"), edit_blog_post_path(@blog_post), :class => 'btn btn-small', :id => ['edit_' + @blog_post.slug] if user_signed_in? %>	
 <%= link_to (t "nav.back"), blog_path, :class => 'btn btn-small' %>
 </div>

@@ -23,7 +23,7 @@
 			 <div class="btn-group btn-group-vertical">
 		      	<%= link_to '<i class="icon-eye-open"></i>'.html_safe, post_path(post), :class => 'btn' %>
 		      	<%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_blog_post_path(post), :class => 'btn' %>
-		      	<%= link_to '<i class="icon-remove"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+		      	<%= link_to '<i class="icon-remove"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger', :id => ['delete_' + post.slug] %>
 			 </div>
 		  </div>
 		</div>

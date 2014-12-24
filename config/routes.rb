@@ -21,7 +21,7 @@ RailsWebsiteTemplate::Application.routes.draw do
   
   post "upload" => "uploads#upload", :as => :post_upload
   get "blog" => "blog_posts#index", :as => :blog
-  get "post/:id" => "blog_posts#show", :as => :post
+  get "blog/:id" => "blog_posts#show", :as => :post
   resources :blog_posts, path: '/admin/posts'
   
   get '/admin/files' => "admin_panel#files", :as => :admin_files
