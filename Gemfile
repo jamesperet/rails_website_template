@@ -60,6 +60,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem "factory_girl_rails", "~> 4.0", :require => false
+  gem 'email_spec'
 end
 
 # Use ActiveModel has_secure_password

@@ -72,6 +72,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     excon (0.39.5)
     execjs (2.2.1)
@@ -263,6 +266,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  email_spec
   factory_girl_rails (~> 4.0)
   figaro
   flatstrap-rails
