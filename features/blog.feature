@@ -9,7 +9,6 @@ Feature: Manage Articles
 	| Hello World | Welcome to the website | true      | First Post          | hello_world | 
 	| Test 001    | 1 2 3 testing          | true      | Testing the website | test_001    |
 
-	@focus	
 	Scenario: Blog posts list 
 		When I go to the blog page 
 		Then I should see "Hello World" 

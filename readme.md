@@ -10,8 +10,9 @@ A template for creating rails websites that includes the following:
 * Image upload/File System
 * Translation (pt-BR, EN)
 * Contact System
-- Maintaince Mode
+* Maintaince Mode
 * Email System (PaperClip + Mandrill)
+* Tests
 
 ## Installation
 
@@ -34,9 +35,8 @@ A template for creating rails websites that includes the following:
 
 ## Todo's
 
-- Google Analytics
+* Google Analytics
 * Log
-* Tests
 * Background processing (redis)
 * Search System
 * geo location/maps
@@ -45,7 +45,6 @@ A template for creating rails websites that includes the following:
 * Invite user/admin
 * admin panel tour
 * rewrite readme file
-* Install instructions
 * Heroku Deploy button
 * Wiki/Codex
 * Portfolio

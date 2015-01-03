@@ -47,6 +47,16 @@ Then(/^I should see "(.*?)" And I should see "(.*?)"$/) do |arg1, arg2|
   page.should have_content(arg2)
 end
 
+Then(/^the page should have a "(.*?)" called "(.*?)"$/) do |arg1, arg2|
+  selector = arg1 + '#' + arg2
+  page.should have_css(selector)
+end
+
+Then(/^the page should not have a "(.*?)" called "(.*?)"$/) do |arg1, arg2|
+  selector = arg1 + '#' + arg2
+  page.should have_no_css(selector)
+end
+
 When(/^I click in the link "(.*?)"$/) do |arg1|
   click_link arg1
 end
@@ -55,24 +65,6 @@ When(/^I click in the button "(.*?)"$/) do |arg1|
   click_button arg1
 end
 
-Given(/^I am logged in as admin$/) do
-  admin_login
-end
-
-Then(/^I log in as admin$/) do
-  admin_login
-end
-
 Then(/^I fill in "(.*?)" with "(.*?)"$/) do |arg1, arg2|
   fill_in arg1, :with => arg2
-end
-
-def admin_login
-  user = FactoryGirl.create(:admin)  
-  visit new_user_session_path  
-  fill_in "Email", :with => 'admin@website.com' 
-  fill_in "Password", :with => '12345678' 
-  click_button "Submit"
-  login_as user, scope: :user
-  visit root_path
 end
