@@ -13,7 +13,6 @@ Feature: Contact Messages
 		And I click in the button "submit_contact_message"
 		Then I should see "Message sent!" 
 	
-	@focus
 	Scenario: Send Contact Message as a user
 		Given I am logged in as user
 		And I go to the homepage

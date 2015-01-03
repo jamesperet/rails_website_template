@@ -1,4 +1,4 @@
-Feature: Manage Articles 
+Feature: Blog Posts
 	In order to make a blog 
 	As an author
 	I want to create and manage blog psots

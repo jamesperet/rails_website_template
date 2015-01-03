@@ -10,8 +10,14 @@ Then(/^I log in as admin$/) do
   admin_login
 end
 
+Given(/^I am not logged in$/) do
+  logout(:user)
+end
+
 def user_login
-  user = FactoryGirl.create(:user)  
+  if User.find_by_first_name("John") == nil
+    user = FactoryGirl.create(:user)
+  end  
   visit new_user_session_path  
   fill_in "Email", :with => 'johndoe@website.com' 
   fill_in "Password", :with => '12345678' 

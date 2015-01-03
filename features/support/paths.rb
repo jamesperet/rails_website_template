@@ -6,6 +6,12 @@ module NavigationHelpers
   
     when/the homepage/ 
       root_path 
+      
+    when/the admin dashboard/ 
+      visit admin_dashboard_path
+
+    when/the configurations page/ 
+      visit admin_config_path
   
     when/the blog page/ 
       visit blog_path 
