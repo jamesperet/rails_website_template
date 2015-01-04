@@ -35,6 +35,6 @@ RailsWebsiteTemplate::Application.configure do
   config.active_support.deprecation = :stderr
   
   # Crapy Fix for email testing error
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   
 end

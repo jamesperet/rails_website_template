@@ -1,10 +1,12 @@
+@blog
 Feature: Blog Posts
 	In order to make a blog 
 	As an author
 	I want to create and manage blog psots
 	
 	Background:
-	Given the following blog_post list 
+	Given the website is configured
+	And the following blog_post list 
 	| title       | content                | published | description         | slug        | 
 	| Hello World | Welcome to the website | true      | First Post          | hello_world | 
 	| Test 001    | 1 2 3 testing          | true      | Testing the website | test_001    |

@@ -61,4 +61,8 @@ require "#{Rails.root}/spec/factories.rb"
 require 'email_spec' # add this line if you use spork
 require 'email_spec/cucumber'
 
+ActionMailer::Base.delivery_method = :test
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.deliveries.clear
+
 

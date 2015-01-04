@@ -5,7 +5,8 @@ Feature: Admin Panel
 	I want to config the website thru an admin panel
 	
 	Background:
-	Given the following blog_post list 
+	Given the website is configured
+	And the following blog_post list 
 	| title       | content                | published | description         | slug        | 
 	| Hello World | Welcome to the website | true      | First Post          | hello_world | 
 	| Test 001    | 1 2 3 testing          | true      | Testing the website | test_001    |
@@ -46,9 +47,9 @@ Feature: Admin Panel
 		When I go to the configurations page
 		Then I should see "You dont have permission to access that page!"
 		
-	@focus	
 	Scenario: Change the website name and Tagline
 		Given I am logged in as admin
+		And I should see "Rails Website Template"
 		When I go to the configurations page
 		Then I fill in "info_website_name" with "Testing Website Name"
 		And I fill in "info_tagline" with "Just another cucumber test"

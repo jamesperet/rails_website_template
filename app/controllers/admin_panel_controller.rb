@@ -24,7 +24,7 @@ class AdminPanelController < ApplicationController
   end
 
   def contact_messages
-    @contact_messages = ContactMessage.order('created_at DESC').all
+    @contact_messages = ContactMessage.order('created_at DESC').to_a
   end
   
   def show_contact_message

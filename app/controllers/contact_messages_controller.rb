@@ -15,9 +15,10 @@ class ContactMessagesController < ApplicationController
       @contact_message.user = current_user
     end
     @contact_message.unread = true
+    to_address = Info.first.contact_email
     respond_to do |format|
       if @contact_message.save
-        UserMailer.contact_message(@contact_message).deliver 
+        UserMailer.contact_message(@contact_message, to_address).deliver 
         format.html { redirect_to contact_messages_path, notice: (t 'contact.delivered') }
         format.json { render action: 'show', status: :created, location: @contact_message }
       else

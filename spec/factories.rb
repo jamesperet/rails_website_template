@@ -25,5 +25,14 @@ FactoryGirl.define do
     f.description "foobar is cool" 
   end 
   
+  factory :info do
+    website_name 'Rails Website Template'
+    tagline 'A Ruby on Rails app template'
+    default_language 'en'
+    contact_email 'admin@website.com'
+    server_email 'no-reply@website.com'
+    website_link 'http://localhost:3000'
+  end
+  
 end  
 

@@ -1,7 +1,5 @@
 include Warden::Test::Helpers
 
-Info.create( :website_name => 'Website', :tagline => 'A Ruby on Rails app template', :default_language => 'en' )
-
 Given /^the following (.+) list ?$/ do |factory, table| 
   user = FactoryGirl.create(:user) 
   table.hashes.each do |hash| 
