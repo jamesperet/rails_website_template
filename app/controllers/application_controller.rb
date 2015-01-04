@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
     def check_admin_mode
       if @config.maintenance_mode && controller_name != 'sessions' && !user_signed_in? && action_name != 'maintenance_mode'
-        redirect_to maintenance_mode_path
+        render 'admin_panel/maintenance_mode'
       elsif !@config.maintenance_mode && !user_signed_in? && action_name == 'maintenance_mode'
         redirect_to root_path
       end

@@ -10,7 +10,15 @@ Then(/^I log in as admin$/) do
   admin_login
 end
 
+Then(/^I log in as user$/) do
+  user_login
+end
+
 Given(/^I am not logged in$/) do
+  logout(:user)
+end
+
+Then(/^I log out$/) do
   logout(:user)
 end
 

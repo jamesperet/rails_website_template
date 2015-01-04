@@ -35,7 +35,6 @@ Feature: Contact Messages
 		Then I should see "Message sent!"
 		And "admin@website.com" should receive an email with subject "Hello Webmaster"
 	
-	@focus
 	Scenario: Receive message
 		Given I go to the contact page 
 		And I fill in "contact_message_email" with "yo@website.com"

@@ -10,3 +10,7 @@ Given(/^the website is configured$/) do
   end
   FactoryGirl.create(:info)
 end
+
+Given(/^Maintenance mode is activated$/) do
+  Info.last.update(maintenance_mode: true, maintenance_title: 'Website under maintenance', maintenance_message: 'Please check back soon')
+end
