@@ -32,19 +32,20 @@ Feature: Email Subscription
 		And I should see "John Doe"
 		And I should see "john_doe@website.com"
 		
+	Scenario: Somebody already registered tries to submit to newsletter subscription form
+		Given I visit the homepage
+		When I fill in "subscription_first_name" with "Jimy"
+		And I fill in "subscription_last_name" with "San"
+		And I fill in "subscription_email" with "jimysan@website.com"
+		And I click in the button "submit_subscription"
+		Then I should see "You have already registered to our newsletter"
+		
 	Scenario: Export subscription list as a CVS file
 		Given I am logged in as admin
 		And I go to the subscribers page
 		When I click in the link "Export CVS"
 		Then I should see "Jimy,San,jimysan@website.com,"
 		And I should see "John,Doe,john_doe@website.com"
-		
-		
-	# 1. Create subscription model
-	# 2. Create subscription controller
-	# 3. Create subscription form view helper
-	# 4. Define subscribers method in admin controller
-	# 5. Create subscribers view
-	# 6. Define Export to CVS method in admin controller
+
 	# 7. Hookup the mailchimp API and send subscriber after subscription
 	

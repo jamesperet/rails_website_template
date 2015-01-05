@@ -1,14 +1,19 @@
-<h3><%= (t 'subscription.header')%></h3>
-<%= bootstrap_form_for(@subscription) do |f| %>
-  <%= f.alert_message "Please fix the errors below."%>
-  <%= f.form_group :first_name do %>
-    	<%= f.text_field :first_name, label: (t 'registration.first_name'), class: 'input-block-level', required: true %>
-  <% end %>
-  <%= f.form_group :last_name do %>
-    	<%= f.text_field :last_name, label: (t 'registration.last_name'), class: 'input-block-level', required: true %>
-  <% end %>
-  <%= f.form_group :email do %>
-    	<%= f.text_field :email, label: (t 'registration.email'), class: 'input-block-level', required: true %>
-  <% end %>
-  <%= f.submit (t 'subscription.submit'), class: 'btn btn-success', id: 'submit_subscription' %>
-<% end %>
+
+<li class="span3">
+	<div class="thumbnail" style="margin-left: 0px; padding: 10px; padding-top: 0px; height: 300px;">
+		<h4><%= (t 'subscription.header')%></h4>
+		<%= bootstrap_form_for(@subscription) do |f| %>
+		  <%= f.alert_message "Please fix the errors below."%>
+		  <%= f.form_group :first_name do %>
+		    	<%= f.text_field :first_name, label: (t 'registration.first_name'), class: 'input-block-level', required: true %>
+		  <% end %>
+		  <%= f.form_group :last_name do %>
+		    	<%= f.text_field :last_name, label: (t 'registration.last_name'), class: 'input-block-level', required: true %>
+		  <% end %>
+		  <%= f.form_group :email do %>
+		    	<%= f.text_field :email, label: (t 'registration.email'), class: 'input-block-level', required: true %>
+		  <% end %>
+		  <%= f.submit (t 'subscription.submit'), class: 'btn btn-success pull-right', id: 'submit_subscription' %>
+		<% end %>
+	</div>
+</li>
