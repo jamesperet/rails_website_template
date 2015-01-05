@@ -53,6 +53,7 @@ gem 'fog'
 gem "carrierwave"
 gem 'i18n'
 gem 'rails_12factor', group: :production
+gem 'gibbon'
 
 group :test do
   gem "rspec"

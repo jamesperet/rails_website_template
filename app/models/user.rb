@@ -16,4 +16,14 @@ class User < ActiveRecord::Base
     return name
   end
   
+  after_create do
+      subscribe_user
+  end
+  
+  def subscribe_user
+    if Subscription.find_by_email(self.email) == nil
+      Subscription.create(first_name: self.first_name, last_name: self.last_name, email: self.email)
+    end
+  end
+  
 end
