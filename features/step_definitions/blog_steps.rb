@@ -1,9 +1,9 @@
 include Warden::Test::Helpers
 
-Given /^the following (.+) list ?$/ do |factory, table| 
+Given /^the following list of blog posts?$/ do |table| 
   user = FactoryGirl.create(:user) 
   table.hashes.each do |hash| 
-    post = FactoryGirl.create(factory, hash)
+    post = FactoryGirl.create("blog_post", hash)
     post.author = user
     post.save
   end
@@ -15,9 +15,6 @@ Given /^I have blog posts titled (.+)$/ do |titles|
   end
 end
 
-When /^I go to (.+)$/ do |page_name|
-  path_to(page_name)
-end
 
 Then(/^The current url should be "(.*?)"$/) do |arg1|
   uri = URI.parse(current_url)

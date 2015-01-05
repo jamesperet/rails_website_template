@@ -34,5 +34,11 @@ FactoryGirl.define do
     website_link 'http://localhost:3000'
   end
   
+  factory :subscription do |f|
+    f.first_name "foo"  
+    f.last_name "bar"
+    f.email "foobar@website.com"
+  end 
+  
 end  
 

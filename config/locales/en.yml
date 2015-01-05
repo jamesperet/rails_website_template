@@ -296,3 +296,8 @@ en:
     cancel_account: Delete Account
     cancel_confirmation: Are you sure you want to delete your account permenantly?
     edit_password: Edit password
+  subscription:
+    subscribers: Subscribers
+    header: Subscribe to our newsletter
+    submit: Subscribe
+    export: Export CVS

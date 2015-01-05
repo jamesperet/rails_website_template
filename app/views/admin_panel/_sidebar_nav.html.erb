@@ -16,6 +16,9 @@
 	   <% if current_page?(:action => 'users')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="fa fa-users fa-fw"></i> '+(t "admin_panel.users")).html_safe, admin_users_path %></li>
 	   
+	   <% if current_page?(:action => 'subscribers')%><li class="active"> <% else %><li><% end %>
+	   <%= link_to ('<i class="fa fa-newspaper-o"></i> '+(t "admin_panel.subscribers")).html_safe, admin_subscribers_path %></li>
+	   
 	   <% if current_page?(:action => 'site_config')%><li class="active"> <% else %><li><% end %>
 	   <%= link_to ('<i class="fa fa-cog fa-fw"></i> '+(t "admin_panel.configurations")).html_safe, admin_config_path %></li>
 	   

@@ -1,0 +1,32 @@
+<div class="row">
+	<%= render 'admin_panel/sidebar_nav' %>
+	<div class="span9">
+		<div class="page-header">
+		  <h1>
+  			<i class="fa fa-envelope"></i>
+			<%= t "admin_panel.subscribers" %> <%= link_to (t "subscription.export"), export_subscribers_list_path(format: :csv), class: 'btn btn-primary btn-mini pull-right', style: 'margin-top: 10px' %>
+		  </h1>
+		</div>
+		<%= bootstrap_flash %>
+		
+		<table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+			   <th>Registered</th>
+                </tr>
+              </thead>
+		    <tbody>
+		       <% @subscribers.each do |subscription| %>
+			    <tr>
+				  <td><%= subscription.full_name %></td>
+				  <td><%= subscription.email %></td>
+				  <td><%= time_ago_in_words(subscription.created_at) %></td>
+			    </tr>
+			  <% end %>
+			</tbody>
+		</table>		
+	</div>
+</div>
+

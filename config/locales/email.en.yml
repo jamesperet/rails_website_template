@@ -5,3 +5,6 @@ en:
     change_my_password: Change my password
     not_requested: "If you didn't request this, please ignore this email."
     password_will_not_change: "Your password won't change until you access the link above and create a new one."
+  newsletter_subscription:
+    subject: Thanks for subscribing
+    message: Welcome to our website

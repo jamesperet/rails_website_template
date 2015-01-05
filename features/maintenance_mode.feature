@@ -1,4 +1,3 @@
-@focus
 Feature: Maintenance Mode
 
 	In order to change things in the website

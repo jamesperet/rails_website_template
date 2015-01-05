@@ -1,11 +1,15 @@
 RailsWebsiteTemplate::Application.routes.draw do
   
+  root 'start#index'
   
+  get "subscription/create"
   resources :contact_messages, path: '/contact', :as => :contact_messages
 
   resources :uploads
   
   get "maintenance_mode" => "admin_panel#maintenance_mode", :as => :maintenance_mode
+  
+  post "subscribe" => "subscription#create", :as => :subscriptions
 
   get "admin/dashboard" => "admin_panel#dashboard", :as => :admin_dashboard
   get "admin" => "admin_panel#index"
@@ -13,7 +17,9 @@ RailsWebsiteTemplate::Application.routes.draw do
   get "admin/contact_messages" => "admin_panel#contact_messages", :as => :admin_contact_messages
   get "admin/contact_message/:id" => "admin_panel#show_contact_message", :as => :show_contact_message
   get "admin/contact_message/:id/mark_contact_message_as_readed" => "contact_messages#readed", :as => :mark_contact_message_as_readed
-  get "admin/contact_message/:id/mark_contact_message_as_unread" => "contact_messages#unread", :as => :mark_contact_message_as_unread  
+  get "admin/contact_message/:id/mark_contact_message_as_unread" => "contact_messages#unread", :as => :mark_contact_message_as_unread
+  get "admin/subscribers" => "admin_panel#subscribers", :as => :admin_subscribers
+  get "admin/subscribers/export/cvs" => "admin_panel#export_subscribers_list", :as => :export_subscribers_list 
   get "admin/users" => "admin_panel#users", :as => :admin_users
   get "admin/users/:id/make_admin" => "admin_panel#make_admin", :as => :make_admin
   get "admin/config" => "admin_panel#site_config", :as => :admin_config
@@ -27,7 +33,6 @@ RailsWebsiteTemplate::Application.routes.draw do
   get '/admin/files' => "admin_panel#files", :as => :admin_files
   resources :uploads, path: '/admin/files'
 
-  get "start/index"
   devise_for :users, :skip => [:sessions, :passwords, :confirmations, :registrations]
   as :user do
     get 'login' => 'devise/sessions#new', :as => :new_user_session
@@ -109,5 +114,5 @@ RailsWebsiteTemplate::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'start#index'
+ 
 end

@@ -30,6 +30,18 @@ class AdminPanelController < ApplicationController
   def show_contact_message
     @msg = ContactMessage.find(params[:id])
   end
+  
+  def subscribers
+    @subscribers = Subscription.all
+  end
+  
+  def export_subscribers_list
+    @subscribers = Subscription.all
+    respond_to do |format|
+        format.html
+        format.csv { render text: @subscribers.to_csv }
+     end
+  end
 
   def users
     @users = User.order('created_at DESC').all

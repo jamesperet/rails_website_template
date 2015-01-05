@@ -300,3 +300,8 @@ pt-BR:
     cancel_account: Cancelar Conta
     cancel_confirmation: Você tem certeza que deseja cancelar sua conta?
     edit_password: Editar senha
+  subscription:
+    subscribers: Seguidores
+    header: Receba nossa newsletter
+    submit: Enviar
+    export: Exportart CVS

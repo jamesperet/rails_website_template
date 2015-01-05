@@ -13,8 +13,8 @@ Feature: Contact Messages
 	Given the website is configured
 	
 	Scenario: Send Contact Message as a visitor
-		Given I go to the homepage
-		When I go to the contact page 
+		Given I visit the homepage
+		When I click in the link "Contact"
 		Then the page should have a "form" called "new_contact_message"
 		And I fill in "contact_message_email" with "yo@website.com"
 		And I fill in "contact_message_title" with "Hello Webmaster"

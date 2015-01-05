@@ -11,4 +11,13 @@ class UserMailer < ActionMailer::Base
          :body      => @msg.content
   end
   
+  def newsletter_subscription(subscription)
+    config = Info.first
+    mail :to        => subscription.email,
+         :subject   => (t 'newsletter_subscription.subject'),
+         :from      => config.contact_email,
+         :from_name => config.website_name,
+         :body      => (t 'newsletter_subscription.message')
+  end
+  
 end
