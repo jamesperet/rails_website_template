@@ -24,3 +24,17 @@ Feature: User Account
 		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
 		Then I click in the link "Logout"
 		And I should see "Signed out successfully"
+		
+	Scenario: User registration
+		Given I am not logged in
+		And I go to the signup page
+		When I fill in "First Name" with "Monty"
+		And I fill in "Last Name" with "Cantsin"
+		And I fill in "Email" with "monty_cantsin@canada.com"
+		And I fill in "Password" with "12345678"
+		And I fill in "Password Confirmation" with "12345678"
+		And I submit the login form
+		Then I should see "Welcome! You have signed up successfully"
+		And I should see "Monty Cantsin"
+		And I should see "Logout"
+		And "monty_cantsin@canada.com" should receive an email with subject "Welcome to Rails Website Template"

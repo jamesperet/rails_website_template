@@ -55,6 +55,11 @@ Then(/^I log in with the email "(.*?)" and password "(.*?)"$/) do |arg1, arg2|
   page.driver.submit :post, new_user_session_path(:user => {email: arg1, password: arg2}), {}
 end
 
+When(/^I submit the login form$/) do
+  click_button "Submit"
+  page.driver.submit :post, user_registration_path(:user => {first_name: "Monty", last_name: "Cantsin", email: "monty_cantsin@canada.com", password: "12345678", password_confirmation: "12345678"}), {}
+end
+
 # METHODS
 
 def user_login

@@ -10,6 +10,9 @@ module NavigationHelpers
     when/the login page/ 
       visit new_user_session_path 
       
+    when/the signup page/ 
+      visit new_user_registration_path 
+      
     when/the admin dashboard/ 
       visit admin_dashboard_path
 

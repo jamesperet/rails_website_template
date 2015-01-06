@@ -1,6 +1,14 @@
 class UserMailer < ActionMailer::Base
   default from: "contact@website.com"
   
+  def signup_message(user)
+    config = Info.first
+    mail :to        => user.email,
+         :subject   => ("Welcome to "+ config.website_name),
+         :from      => config.contact_email,
+         :from_name => config.website_name,
+         :body      => ("Thanks for registering to our website. " + config.website_link)
+  end
 
   def contact_message(contact_message, to_address)
     @msg = contact_message
