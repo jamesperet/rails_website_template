@@ -13,7 +13,8 @@ Feature: User Account
 		When I go to the login page
 		Then I should see "Sign In"
 		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
-		Then I should see "Monty Cantsin"
+		Then I should see "Signed in successfully"
+		And I should see "Monty Cantsin"
 		And I should see "Logout"
 		
 	Scenario: Registered user logout

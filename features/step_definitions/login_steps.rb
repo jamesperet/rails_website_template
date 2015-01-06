@@ -52,9 +52,7 @@ Then(/^I log in with the email "(.*?)" and password "(.*?)"$/) do |arg1, arg2|
   fill_in "user_email", :with => arg1
   fill_in "user_password", :with => arg2
   click_button "Submit"
-  user = User.find_by_email(arg1)
-  login_as user, scope: :user
-  visit root_path
+  page.driver.submit :post, new_user_session_path(:user => {email: arg1, password: arg2}), {}
 end
 
 # METHODS
