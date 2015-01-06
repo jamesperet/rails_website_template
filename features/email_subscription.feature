@@ -1,4 +1,4 @@
-@focus
+@subscription
 Feature: Email Subscription
 
 	In order to send newsletters to customers
@@ -46,6 +46,4 @@ Feature: Email Subscription
 		When I click in the link "Export CVS"
 		Then I should see "Jimy,San,jimysan@website.com,"
 		And I should see "John,Doe,john_doe@website.com"
-
-	# 7. Hookup the mailchimp API and send subscriber after subscription
 	

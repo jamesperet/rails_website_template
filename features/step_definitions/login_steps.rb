@@ -1,3 +1,5 @@
+# TESTS
+
 Given(/^I am logged in as user$/) do
   user_login
 end
@@ -16,11 +18,46 @@ end
 
 Given(/^I am not logged in$/) do
   logout(:user)
+#  current_driver = Capybara.current_driver
+#  begin
+#    Capybara.current_driver = :rack_test
+#    page.driver.submit :delete, "/logout", {}
+#  ensure
+#    Capybara.current_driver = current_driver
+#  end
 end
 
 Then(/^I log out$/) do
   logout(:user)
+#  current_driver = Capybara.current_driver
+#  begin
+#    Capybara.current_driver = :rack_test
+#    page.driver.submit :delete, "/logout", {}
+#  ensure
+#    Capybara.current_driver = current_driver
+#  end
 end
+
+Given(/^the user "(.*?)" "(.*?)" with email "(.*?)" and password "(.*?)" exists$/) do |arg1, arg2, arg3, arg4|
+  user_hash = { "first_name" => arg1, "last_name" => arg2, "email" => arg3, "password" => arg4 }
+  if User.find_by_email(arg3) == nil
+    user = FactoryGirl.create(:user, user_hash) 
+  end
+  if User.last.email != arg3
+    return false
+  end
+end
+
+Then(/^I log in with the email "(.*?)" and password "(.*?)"$/) do |arg1, arg2|
+  fill_in "user_email", :with => arg1
+  fill_in "user_password", :with => arg2
+  click_button "Submit"
+  user = User.find_by_email(arg1)
+  login_as user, scope: :user
+  visit root_path
+end
+
+# METHODS
 
 def user_login
   if User.find_by_first_name("John") == nil

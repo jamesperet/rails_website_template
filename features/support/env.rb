@@ -54,15 +54,15 @@ end
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
+
 Cucumber::Rails::Database.javascript_strategy = :truncation
 require "#{Rails.root}/spec/factories.rb"
 
 # Make sure this require is after you require cucumber/rails/world.
 require 'email_spec' # add this line if you use spork
 require 'email_spec/cucumber'
+require "#{Rails.root}/spec/spec_helper"
 
 ActionMailer::Base.delivery_method = :test
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.deliveries.clear
-
-

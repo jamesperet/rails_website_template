@@ -1,4 +1,4 @@
-include Warden::Test::Helpers
+
 
 Given /^the following list of blog posts?$/ do |table| 
   user = FactoryGirl.create(:user) 

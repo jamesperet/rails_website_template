@@ -16,7 +16,7 @@
 	                 <%= f.check_box :remember_me, as: :boolean, label: (t 'registration.remember_me') if devise_mapping.rememberable? %>
 	                 <!-- Change this to a button or input when using this as a form -->
 				  <div class="form-group" style="margin-top: 25px;">
-				  <%= f.submit  t 'registration.sign_in_submit' %>
+				  <%= f.submit (t 'registration.sign_in_submit'), id: 'submit_login_btn' %>
 				  <%= link_to (t 'registration.sign_up'), new_user_registration_path, class: 'btn btn-link ' %>
 				  <%= link_to (t 'registration.forgot_password'), new_user_password_path, class: 'btn btn-link ' %>
 				 

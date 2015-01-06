@@ -25,6 +25,10 @@ Then(/^spit out the page HTML$/) do
   puts page.html
 end
 
+Then /^show me the page$/ do
+  save_and_open_page
+end
+
 When /^I go to (.+)$/ do |page_name|
   path_to(page_name)
 end

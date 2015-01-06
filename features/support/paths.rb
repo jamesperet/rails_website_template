@@ -7,6 +7,9 @@ module NavigationHelpers
     when/the homepage/ 
       root_path 
       
+    when/the login page/ 
+      visit new_user_session_path 
+      
     when/the admin dashboard/ 
       visit admin_dashboard_path
 
