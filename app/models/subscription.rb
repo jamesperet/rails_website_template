@@ -22,10 +22,11 @@ class Subscription < ActiveRecord::Base
     list_id = ENV['MAILCHIMP_LIST_ID']
     response = Rails.configuration.mailchimp.lists.subscribe({
       id: list_id,
+      throws_exceptions: false,
       email: {email: email},
       double_optin: false
     })
-    response
+    #response
   end
   
 end
