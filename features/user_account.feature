@@ -88,8 +88,7 @@ Feature: User Account
 		And I go to the login page
 		And I log in with the email "monty_cantsin@canada.com" and password "87654321"
 		Then I should see "Signed in successfully"
-	
-	@focus	
+		
 	Scenario: Change User Avatar
 		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
 		And I go to the login page
@@ -99,3 +98,12 @@ Feature: User Account
 		And I click in the button "Update"
 		And I click in the link "Account"
 		Then I should see the image "avatar.jpg"
+		
+	Scenario: Delete user account
+		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
+		And I go to the login page
+		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
+		And I click in the link "Account"
+		When I click in the link "Delete Account"
+		Then I should see "Bye! Your account was successfully cancelled. We hope to see you again soon."
+		

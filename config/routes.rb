@@ -56,7 +56,7 @@ RailsWebsiteTemplate::Application.routes.draw do
         get '/settings' => 'devise/registrations#edit',   as: 'edit_user_registration'
         put '/settings' => 'users/registrations#update', as: 'update_user_registration'
         # account deletion
-        delete '' => 'devise/registrations#destroy'
+        delete 'delete_account' => 'devise/registrations#destroy', :as => :delete_user_account
     end
   end
   
