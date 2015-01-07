@@ -44,8 +44,8 @@ RailsWebsiteTemplate::Application.routes.draw do
     scope '/account' do
         # password reset
         get   '/reset-password'        => 'devise/passwords#new',    as: 'new_user_password'
-        put   '/reset-password'        => 'devise/passwords#update', as: 'user_password'
-        post  '/reset-password'        => 'devise/passwords#create'
+        put   '/reset-password'        => 'devise/passwords#update', :as => :user_password
+        post  '/reset-password'        => 'devise/passwords#create', :as => :reset_password
         get   '/reset-password/change' => 'devise/passwords#edit',   as: 'edit_user_password'
         # confirmation
         get   '/confirm'        => 'devise/confirmations#show',   as: 'user_confirmation'

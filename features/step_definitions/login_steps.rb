@@ -48,6 +48,8 @@ Given(/^the user "(.*?)" "(.*?)" with email "(.*?)" and password "(.*?)" exists$
   end
 end
 
+# Fixes for devise post bug
+
 Then(/^I log in with the email "(.*?)" and password "(.*?)"$/) do |arg1, arg2|
   fill_in "user_email", :with => arg1
   fill_in "user_password", :with => arg2
@@ -58,6 +60,18 @@ end
 When(/^I submit the login form$/) do
   click_button "Submit"
   page.driver.submit :post, user_registration_path(:user => {first_name: "Monty", last_name: "Cantsin", email: "monty_cantsin@canada.com", password: "12345678", password_confirmation: "12345678"}), {}
+end
+
+When(/^I submit the password reset form$/) do
+  click_button "Reset Password"
+  page.driver.submit :post, reset_password_path(:user => {email: "monty_cantsin@canada.com"}), {}
+end
+
+Then(/^I submit the new password form$/) do
+  #click_button "Save Password"
+  token = URI.parse(current_url).to_s.split('=').last
+  #puts token
+  page.driver.submit :put, user_password_path(:user => {password: "87654321", password_confirmation: "87654321", reset_password_token: token}), {}
 end
 
 # METHODS

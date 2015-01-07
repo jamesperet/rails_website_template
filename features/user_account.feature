@@ -1,4 +1,4 @@
-@focus
+@user_account
 Feature: User Account
 	In order to change content in the website 
 	As user of the system
@@ -38,3 +38,24 @@ Feature: User Account
 		And I should see "Monty Cantsin"
 		And I should see "Logout"
 		And "monty_cantsin@canada.com" should receive an email with subject "Welcome to Rails Website Template"
+	
+	@focus	
+	Scenario: User forgets password
+		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
+		And I am not logged in
+		And I go to the login page
+		When I click in the link "Forgot your password?"
+		And I fill in "Email" with "monty_cantsin@canada.com"
+		And I submit the password reset form
+		Then I should see "You will receive an email with instructions on how to reset your password in a few minutes"
+		And "monty_cantsin@canada.com" should receive an email with subject "Reset password instructions"
+		When I open the email with subject "Reset password instructions"
+		Then I should see "Someone has requested a link to change your password" in the email body
+		Then I clicks in the link "Change my password" in the email
+		And I fill in "New Password" with "87654321"
+		And I fill in "Confirm New Password" with "87654321"
+		And I submit the new password form
+		Then I should see "Your password was changed successfully. You are now signed in."
+		And I should see "Monty Cantsin"
+		And I should see "Logout"
+		
