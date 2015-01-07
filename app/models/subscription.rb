@@ -23,7 +23,7 @@ class Subscription < ActiveRecord::Base
     response = Rails.configuration.mailchimp.lists.subscribe({
       id: list_id,
       email: {email: email},
-      double_optin: false,
+      double_optin: false
     })
     response
   end
