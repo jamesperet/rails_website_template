@@ -23,17 +23,17 @@
 	    					</span>
 	    			    </div>
 				    
-				    <%= f.text_field :first_name, label: (t 'registration.first_name'), required:true, autofocus: true, class: 'span4' %>
-				    <%= f.text_field :last_name, label: (t 'registration.last_name'), required:true, class: 'span4' %>
+				    <%= f.text_field :first_name, label: (t 'registration.first_name'), required: true, autofocus: true, class: 'span4' %>
+				    <%= f.text_field :last_name, label: (t 'registration.last_name'), required: false, class: 'span4' %>
 				    <%= f.email_field :email, required: true, class: 'span4' %>
 				    </div>
 				    <hr>
 				    <div class="form-inputs">
 			    		    <%= f.form_group :title, class: "pull-left", style: 'margin-left: 0px; width: 30%;' do %>
-			    		        <%= f.password_field :password, label: (t 'registration.password'), required: true, class: 'input-block-level' %>
+			    		        <%= f.password_field :password, label: (t 'registration.password'), required: false, class: 'input-block-level' %>
 			    		    <% end %>
 			    		    <%= f.form_group :slug, class: "pull-left", style: 'margin-left: 27px; width: 30%;' do %>
-			    		        <%= f.password_field :password_confirmation, label: (t 'registration.password_confirmation'), required: true, class: 'input-block-level' %>
+			    		        <%= f.password_field :password_confirmation, label: (t 'registration.password_confirmation'), required: false, class: 'input-block-level' %>
 			    		    <% end %>
 			    		    <%= f.form_group :slug, class: "pull-left", style: 'margin-left: 27px; width: 30%;' do %>
 			    		        <%= f.password_field :current_password, label: (t 'registration.current_password'), required: true, class: 'input-block-level' %>

@@ -38,8 +38,7 @@ Feature: User Account
 		And I should see "Monty Cantsin"
 		And I should see "Logout"
 		And "monty_cantsin@canada.com" should receive an email with subject "Welcome to Rails Website Template"
-	
-	@focus	
+			
 	Scenario: User forgets password
 		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
 		And I am not logged in
@@ -59,3 +58,34 @@ Feature: User Account
 		And I should see "Monty Cantsin"
 		And I should see "Logout"
 		
+	Scenario: Change user name and email
+		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
+		And I go to the login page
+		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
+		And I go to the homepage
+		When I click in the link "Account"
+		Then I should see "Edit Profile"
+		And I fill in "First Name" with "Donald"
+		And I fill in "Last Name" with "Duck"
+		And I fill in "Email" with "donald_duck@looneytunes.com"
+		And I fill in "Current Password" with "12345678"
+		And I click in the button "Update"
+		Then I should see "You updated your account successfully"
+		Then I should see "Donald Duck"
+	
+	@focus	
+	Scenario: Change user password
+		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
+		And I go to the login page
+		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
+		And I go to the homepage
+		When I click in the link "Account"
+		And I fill in "Password" with "87654321"
+		And I fill in "Password Confirmation" with "87654321"
+		And I fill in "Current Password" with "12345678"
+		And I click in the button "Update"
+		Then I should see "You updated your account successfully"
+		And I click in the link "Logout"
+		And I go to the login page
+		And I log in with the email "monty_cantsin@canada.com" and password "87654321"
+		Then I should see "Signed in successfully"
