@@ -17,4 +17,5 @@
 //= require jasny-bootstrap
 //= require summernote
 //= require turbolinks
+//= require google_analytics
 //= require_tree .
