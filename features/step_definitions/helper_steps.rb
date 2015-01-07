@@ -40,3 +40,16 @@ end
 When /^I visit the homepage$/ do
  visit ""
 end
+
+# File Upload
+
+Then(/^I upload the file "(.*?)" to the field "(.*?)"$/) do |arg1, arg2|
+  @test_file_path = File.expand_path(('../../spec/fixtures/' + arg1), File.dirname(__FILE__))
+  attach_file arg2, @test_file_path 
+end
+
+# Check for image
+
+Then(/^I should see the image "(.*?)"$/) do |image_name|
+  page.should have_selector("img[src$='#{image_name}']")
+end

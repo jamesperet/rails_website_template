@@ -72,8 +72,7 @@ Feature: User Account
 		And I click in the button "Update"
 		Then I should see "You updated your account successfully"
 		Then I should see "Donald Duck"
-	
-	@focus	
+		
 	Scenario: Change user password
 		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
 		And I go to the login page
@@ -89,3 +88,14 @@ Feature: User Account
 		And I go to the login page
 		And I log in with the email "monty_cantsin@canada.com" and password "87654321"
 		Then I should see "Signed in successfully"
+	
+	@focus	
+	Scenario: Change User Avatar
+		Given the user "Monty" "Cantsin" with email "monty_cantsin@canada.com" and password "12345678" exists
+		And I go to the login page
+		And I log in with the email "monty_cantsin@canada.com" and password "12345678"
+		And I click in the link "Account"
+		When I upload the file "avatar.jpg" to the field "user_avatar"
+		And I click in the button "Update"
+		And I click in the link "Account"
+		Then I should see the image "avatar.jpg"

@@ -13,13 +13,13 @@
 				    
 	    			   <div class="fileupload fileupload-new pull-right" data-provides="fileupload" style="margin-top: 5px;">
 	    					<div class="fileupload-preview thumbnail" data-trigger="fileinput" style="width: 140px; height: 140px;">
-							<%=  image_tag resource.avatar.to_s if resource.avatar? %>
+							<%=  image_tag @user.avatar.to_s if @user.avatar? %>
 						</div>
 						<br>
 	    					<span class="btn btn-default btn-file btn-mini" style="width: 135px;">
 	    						<span class="fileinput-new"></span>
 	    						<span class="fileinput-exists"></span>
-	    						<%= f.file_field :image, class: 'hidden', label: (t 'blog.select_image') %>
+	    						<%= f.file_field :avatar, class: 'hidden', label: (t 'blog.select_image') %>
 	    					</span>
 	    			    </div>
 				    
@@ -36,7 +36,7 @@
 			    		        <%= f.password_field :password_confirmation, label: (t 'registration.password_confirmation'), required: false, class: 'input-block-level' %>
 			    		    <% end %>
 			    		    <%= f.form_group :slug, class: "pull-left", style: 'margin-left: 27px; width: 30%;' do %>
-			    		        <%= f.password_field :current_password, label: (t 'registration.current_password'), required: true, class: 'input-block-level' %>
+			    		        <%= f.password_field :current_password, label: (t 'registration.current_password'), required: false, class: 'input-block-level' %>
 			    		    <% end %>
 			         </div>
 				    
