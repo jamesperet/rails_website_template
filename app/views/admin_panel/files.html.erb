@@ -5,20 +5,22 @@
 		  <h1><i class="fa fa-file-image-o"></i> <%= t "admin_panel.files" %> <%= link_to (t "admin_panel.upload_file"), new_upload_path, :class => 'btn btn-primary btn-mini' %></h1>
 		</div>
 		<%= bootstrap_flash %>
-		<ul class="thumbnails">
-		    <% @uploads.each do |upload| %>
-			   <li class="span3" style="">
-			     <div class="thumbnail" style="height: 250px;">
-				  <% if upload.file.content_type.start_with?('image') && upload.file.thumb.to_s != nil %>
-				  	<%= image_tag upload.file.thumb.to_s %>
-				  <% else %>
-			       	<img src="http://placehold.it/300x200" alt="">
-				  <% end %>
-			       <h5 style="height: 40px"><%= link_to upload.title, upload_path(upload) %></h5>
-			       <p><%= upload.description %></p>
-			     </div>
-			   </li>
-		    <% end %>
-		</ul>
+		<% if @uploads != nil %>
+			<ul class="thumbnails">
+			    <% @uploads.each do |upload| %>
+				   <li class="span3" style="">
+				     <div class="thumbnail" style="height: 250px;">
+					  <% if upload.file.content_type.to_s.start_with?('image') && upload.file.thumb.to_s != nil %>
+					  	<%= image_tag upload.file.thumb.to_s %>
+					  <% else %>
+				       	<img src="http://placehold.it/300x200" alt="">
+					  <% end %>
+				       <h5 style="height: 40px"><%= link_to upload.title, upload_path(upload) %></h5>
+				       <p><%= upload.description %></p>
+				     </div>
+				   </li>
+			    <% end %>
+			</ul>
+		<% end %>
 	</div>
 </div>

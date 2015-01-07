@@ -53,3 +53,16 @@ end
 Then(/^I should see the image "(.*?)"$/) do |image_name|
   page.should have_selector("img[src$='#{image_name}']")
 end
+
+# Upload Images
+
+Given(/^the following files where uploaded$/) do |table|
+  table.hashes.each do |hash|
+    visit '/admin/files/new'
+    fill_in "Title", :with => hash[:title]
+    fill_in "Description", :with => hash[:description]
+    @test_file_path = File.expand_path(('../../spec/fixtures/' + hash[:file]), File.dirname(__FILE__))
+    attach_file "upload_file", @test_file_path 
+		click_button "Save"
+  end
+end

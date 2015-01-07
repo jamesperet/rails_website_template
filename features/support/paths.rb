@@ -21,6 +21,9 @@ module NavigationHelpers
   
     when/the blog page/ 
       visit blog_path 
+    
+    when/the files page/ 
+      visit admin_files_path
       
     when/the contact page/ 
       visit contact_messages_path 
