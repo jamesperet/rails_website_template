@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
          :subject   => ("Welcome to "+ config.website_name),
          :from      => config.contact_email,
          :from_name => config.website_name,
-         :body      => ("Thanks for registering to our website. ")
+         :body      => "Thanks for registering to our website."
   end
 
   def contact_message(contact_message, to_address)
