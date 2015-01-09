@@ -60,6 +60,9 @@ Then /^(?:I|they|"([^"]*?)") should receive (an|no|\d+) emails? with subject "([
   # @email = ActionMailer::Base.deliveries.last
   # @email.to.should include address
   # @email.subject.should subject
+  # CucumberExternalResqueWorker.reset_counter
+  # Resque.remove_queue(:send_contact_message_queue)
+  # CucumberExternalResqueWorker.process_all
   unread_emails_for(address).select { |m| m.subject =~ Regexp.new(Regexp.escape(subject)) }.size.should == parse_email_count(amount)
 end
 

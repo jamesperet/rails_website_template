@@ -6,7 +6,7 @@ class SubscribeToMailchimp
     # Get User
     subscription = Subscription.find_by_id(id)
 
-    return true if (Rails.env.test? && !testing)
+    return true if (Rails.env.test?)
     list_id = ENV['MAILCHIMP_LIST_ID']
     response = Rails.configuration.mailchimp.lists.subscribe({
       id: list_id,

@@ -44,6 +44,7 @@ gem 'simple_form'
 gem 'bootstrap_form'
 gem 'friendly_id', '~> 5.0.0'
 gem 'devise'
+gem "devise-async"
 gem "letter_opener", :group => :development
 gem 'redcarpet'
 gem 'summernote-rails'
