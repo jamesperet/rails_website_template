@@ -5,7 +5,6 @@ class SubscriptionController < ApplicationController
     respond_to do |format|
       if Subscription.find_by_email(@subscription.email) == nil 
         if @subscription.save
-          UserMailer.newsletter_subscription(@subscription).deliver 
           format.html { redirect_to root_path, notice: 'Thanks for subscribing to our newsletter' }
           format.json { render action: 'show', status: :created, location: @subscription }
         else

@@ -2,6 +2,7 @@ class Subscription < ActiveRecord::Base
   
   after_create do
     subscribe_to_mailchimp
+    send_newsletter_subscription_email
   end
   
   def full_name
@@ -19,6 +20,12 @@ class Subscription < ActiveRecord::Base
   
   def subscribe_to_mailchimp
     Resque.enqueue(SubscribeToMailchimp, self.id)
+  end
+  
+  def send_newsletter_subscription_email
+    if User.find_by_email(self.email) == nil
+      Resque.enqueue(SendNewsletterSubscription, self.id)
+    end
   end
   
 end
