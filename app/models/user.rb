@@ -17,19 +17,17 @@ class User < ActiveRecord::Base
   end
   
   after_create do
-      subscribe_user
-      send_signup_mail
+      after_signup_tasks
   end
   
-  def subscribe_user
+  def after_signup_tasks
+    # Send signup email (worker)
+    Resque.enqueue(SendSignupMessage, self.id)
+    # Add user to subscription list
     if Subscription.find_by_email(self.email) == nil
       Subscription.create(first_name: self.first_name, last_name: self.last_name, email: self.email)
     end
-  end
-  
-
-  def send_signup_mail
-      UserMailer.signup_message(self).deliver 
+    # Mixpanel Tracking Analytics
   end
   
 end

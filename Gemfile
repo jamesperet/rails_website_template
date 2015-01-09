@@ -54,6 +54,7 @@ gem "carrierwave"
 gem 'i18n'
 gem 'rails_12factor', group: :production
 gem 'gibbon'
+gem 'resque'
 
 group :test do
   gem "rspec"
