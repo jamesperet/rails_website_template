@@ -39,7 +39,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
   
   def cache_dir
-    "#{Rails.root}/tmp/uploads/#{mounted_as}/"
+    "/tmp/uploads/#{mounted_as}/"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
