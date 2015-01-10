@@ -2,6 +2,8 @@ RailsWebsiteTemplate::Application.routes.draw do
   
   root 'start#index'
   
+  mount Resque::Server.new, :at => "/resque" 
+  
   get "subscription/create"
   resources :contact_messages, path: '/contact', :as => :contact_messages
 

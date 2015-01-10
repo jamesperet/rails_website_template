@@ -58,7 +58,8 @@ gem 'carrierwave_backgrounder'
 gem 'i18n'
 gem 'rails_12factor', group: :production
 gem 'gibbon'
-gem 'resque'
+gem 'redis'
+gem 'resque', '~> 1.22.0', :require => "resque/server"
 
 group :test do
   gem "rspec"
