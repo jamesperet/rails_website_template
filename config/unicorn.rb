@@ -28,7 +28,9 @@ after_fork do |server, worker|
  
   # If you are using Redis but not Resque, change this
   if defined?(Resque)
-    Resque.redis = ENV['REDISTOGO_URL']
+    uri = URI.parse(ENV["REDISTOGO_URL"])
+    redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    Resque.redis = redis
     Rails.logger.info('Connected to Redis')
   end
 end
