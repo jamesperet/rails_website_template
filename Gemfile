@@ -52,6 +52,7 @@ gem 'figaro'
 gem "mini_magick"
 gem 'fog'
 gem "carrierwave"
+gem 'carrierwave_backgrounder'
 gem 'i18n'
 gem 'rails_12factor', group: :production
 gem 'gibbon'

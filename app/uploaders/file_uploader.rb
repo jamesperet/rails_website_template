@@ -6,7 +6,9 @@ class FileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   include CarrierWave::MimeTypes
-
+  
+  include ::CarrierWave::Backgrounder::Delay
+  
   # Choose what kind of storage to use for this uploader:
   if Rails.env.test? or Rails.env.cucumber?
       storage :file
@@ -29,8 +31,12 @@ class FileUploader < CarrierWave::Uploader::Base
     "uploads/#{mounted_as}/#{model.id}"
   end
   
+  def root
+    "#{Rails.root}/public"
+  end
+  
   def cache_dir
-    " ./tmp/uploads/#{mounted_as}/#{model.id}"
+    " ./tmp/uploads/#{mounted_as}/"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

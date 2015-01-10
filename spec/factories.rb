@@ -23,7 +23,7 @@ FactoryGirl.define do
     f.content "foobar"  
     f.published true
     f.description "foobar is cool" 
-  end 
+  end
   
   factory :info do
     website_name 'Rails Website Template'
