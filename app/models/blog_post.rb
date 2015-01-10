@@ -4,4 +4,6 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :title, :slug
   belongs_to :author, :class_name => "User"
   mount_uploader :image, CoverUploader
+  process_in_background :image
+  store_in_background :image
 end

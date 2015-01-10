@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :posts
   
   mount_uploader :avatar, AvatarUploader
+  process_in_background :avatar
+  store_in_background :avatar
            
   def full_name
     name = self.first_name.to_s + ' ' + self.last_name.to_s
