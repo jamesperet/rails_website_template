@@ -32,10 +32,11 @@ A template for creating rails websites that includes the following:
 
 1. Create a new heroku app: ```heroku create new-app-name```
 2. Run ```figaro heroku:set -e production``` to copy env variables from ```config/application.yml```  and set them in heroku
-3. Add the heroku postgre addon:  ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
-4. Push to heroku:  ```git push heroku master``` to deploy the repo
-5. Migrate the database: ```heroku run rake db:migrate```
-6. Create the initial config and admin user: ```heroku run rake bootstrap:all```
+3. Add the heroku *postgre* addon:  ```heroku addons:add heroku-postgresql``` to create and configure a *postgres* database in heroku server
+4. Add the heroku *Redis to Go* addon: ```heroku addons:add redistogo```
+5. Push to heroku:  ```git push heroku master``` to deploy the repo
+6. Migrate the database: ```heroku run rake db:migrate```
+7. Create the initial config and admin user: ```heroku run rake bootstrap:all```
 
 ## Env Variables
 
