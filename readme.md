@@ -52,7 +52,8 @@ A template for creating rails websites that includes the following:
 	DEVISE_SECRET_KEY: 
 	SECRET_KEY_BASE: 
 	MAILCHIMP_KEY: 
-	MAILCHIMP_LIST_ID: 
+	MAILCHIMP_LIST_ID:
+	REDISTOGO_URL:
 ```
 
 ## Todo's
