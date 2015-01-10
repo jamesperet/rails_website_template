@@ -43,7 +43,8 @@ A template for creating rails websites that includes the following:
 ```yml
 	AWS_ACCESS_KEY_ID:
 	AWS_SECRET_ACCESS_KEY: 
-	AWS_S3_BUCKET: 
+	AWS_S3_BUCKET:
+	AWS_S3_BUCKET_REGION:
 	HEROKU_APP_URL: 
 	MANDRILL_USERNAME: 
 	MANDRILL_KEY: 
