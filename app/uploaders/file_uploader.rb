@@ -34,7 +34,10 @@ class FileUploader < CarrierWave::Uploader::Base
   def root
     "#{Rails.root}/public"
   end
-
+  
+  def cache_dir
+    "#{Rails.root}/tmp/uploads/#{mounted_as}/"
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

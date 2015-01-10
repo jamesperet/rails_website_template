@@ -5,5 +5,4 @@ class BlogPost < ActiveRecord::Base
   belongs_to :author, :class_name => "User"
   mount_uploader :image, CoverUploader
   process_in_background :image
-  store_in_background :image
 end
