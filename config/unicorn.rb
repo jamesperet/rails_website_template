@@ -29,6 +29,7 @@ after_fork do |server, worker|
   # If you are using Redis but not Resque, change this
   if defined?(Resque)
     Resque.redis = REDIS_WORKER
+    @resque_pid ||= spawn("bundle exec rake resque:work")
     Rails.logger.info('Connected to Redis')
   end
 end
