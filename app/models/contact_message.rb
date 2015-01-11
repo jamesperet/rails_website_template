@@ -3,6 +3,7 @@ class ContactMessage < ActiveRecord::Base
   
   after_create do
     send_contact_message
+    track_analytics
   end
   
   def name
@@ -16,6 +17,12 @@ class ContactMessage < ActiveRecord::Base
   
   def send_contact_message
     Resque.enqueue(SendContactMessage, self.id)
+  end
+  
+  def track_analytics
+    # Mixpanel Tracking Analytics
+    @analytics = Analytics.new(self.user != nil ? self.user.full_name : ('Guest_'+ Time.now.to_i.to_s))
+    @analytics.track('Contact message sent')
   end
   
 end

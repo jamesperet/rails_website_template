@@ -3,6 +3,7 @@ class Subscription < ActiveRecord::Base
   after_create do
     subscribe_to_mailchimp
     send_newsletter_subscription_email
+    track_analytics
   end
   
   def full_name
@@ -26,6 +27,12 @@ class Subscription < ActiveRecord::Base
     if User.find_by_email(self.email) == nil
       Resque.enqueue(SendNewsletterSubscription, self.id)
     end
+  end
+  
+  def track_analytics
+    # Mixpanel Tracking Analytics
+    @analytics = Analytics.new(self.full_name)
+    @analytics.track('Newsletter subscription')
   end
   
 end

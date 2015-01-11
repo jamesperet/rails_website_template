@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
       Subscription.create(first_name: self.first_name, last_name: self.last_name, email: self.email)
     end
     # Mixpanel Tracking Analytics
+    @analytics = Analytics.new(self.full_name)
+    @analytics.track_user_registration(self)
   end
   
 end

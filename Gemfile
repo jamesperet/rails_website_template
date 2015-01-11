@@ -63,6 +63,7 @@ gem 'rails_12factor', group: :production
 gem 'gibbon'
 gem 'redis'
 gem 'resque', '~> 1.22.0', :require => "resque/server"
+gem 'mixpanel-ruby'
 
 group :test do
   gem "rspec"
