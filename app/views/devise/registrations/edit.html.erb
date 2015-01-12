@@ -1,3 +1,4 @@
+<% title (t 'registration.edit_profile') + ' - ' + @config.website_name %>
 <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>  
 	<div class="span6 offset3 media thumbnail" style="padding: 0px">
 		<div class="login-panel panel panel-default" style="padding: 10px;">

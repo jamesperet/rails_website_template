@@ -1,3 +1,5 @@
+<% title @blog_post.title + " - " + @config.website_name %>
+
 <div class="page-header">
   <h1><%= @blog_post.title %></h1>
   <small><%= t "blog.by" %> <%= @blog_post.author.full_name %>, <%= time_ago_in_words(@blog_post.created_at) %> <%= t "blog.ago" %></small> 

@@ -9,18 +9,24 @@ class Analytics
   end 
   
   def track(page)
-    @tracker.track(@id, page)
+    if Rails.env.production?
+      @tracker.track(@id, page)
+    end
   end
   
   def track_user_registration(user)
-    identify(user)
-    @tracker.track(user.full_name, 'User registration')
+    if Rails.env.production?
+      identify(user)
+      @tracker.track(user.full_name, 'User registration')
+    end
   end 
   
   def track_user_sign_in(user)
-    identify(user)
-    @tracker.track(user.full_name, 'User sign in')
-    @tracker.people.plus_one(user.full_name, "logins")
+    if Rails.env.production?
+      identify(user)
+      @tracker.track(user.full_name, 'User sign in')
+      @tracker.people.plus_one(user.full_name, "logins")
+    end
   end 
   
   private 

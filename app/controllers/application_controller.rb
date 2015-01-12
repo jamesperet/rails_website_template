@@ -26,11 +26,11 @@ class ApplicationController < ActionController::Base
   
   def analytics
     if current_user != nil
-      id = current_user.full_name
+      @id_analytics = current_user.full_name
     else
-      id = 'Guest_'+ Time.now.to_i.to_s
+      @id_analytics = 'Guest_'+ Time.now.to_i.to_s
     end
-    @analytics ||= Analytics.new(id)
+    @analytics ||= Analytics.new(@id_analytics)
   end
   
   def after_sign_in_path_for(resource_or_scope)

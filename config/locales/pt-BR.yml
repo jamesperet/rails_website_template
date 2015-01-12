@@ -241,6 +241,7 @@ pt-BR:
     make_admin_error: A permissão não foi alterada.
     permission_denied: Você não tem permissão para acessar aquela página!
     contact_messages: Mensagens
+    subscribers: Assinantes
   nav:
     admin_panel: Painel de Controle
     account: Conta
@@ -301,7 +302,7 @@ pt-BR:
     cancel_confirmation: Você tem certeza que deseja cancelar sua conta?
     edit_password: Editar senha
   subscription:
-    subscribers: Seguidores
+    subscribers: Assinantes
     header: Receba nossa newsletter
     submit: Enviar
     export: Exportart CVS

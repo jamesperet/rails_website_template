@@ -239,6 +239,7 @@ en:
     make_admin_error: User permission was not altered.
     permission_denied: You dont have permission to access that page!
     contact_messages: Messages
+    subscribers: Subscribers
   nav:
     admin_panel: Admin Panel
     account: Account
