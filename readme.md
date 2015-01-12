@@ -37,6 +37,7 @@ A template for creating rails websites that includes the following:
 5. Push to heroku:  ```git push heroku master``` to deploy the repo
 6. Migrate the database: ```heroku run rake db:migrate```
 7. Create the initial config and admin user: ```heroku run rake bootstrap:all```
+8. Add your website URL to the [Mixpanel Partner program](https://mixpanel.com/free/) to earn 200,000 data points every month plus 25,000 people profiles.
 
 ## Env Variables
 
