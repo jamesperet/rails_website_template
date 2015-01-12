@@ -6,6 +6,7 @@
 attachHandler = ->
 	$(".bootstrap_switch").bootstrapSwitch('size', 'large');
 	$('#admin_navbar').affix()
-		
+	$('.help_btn').popover('hide')
+	  
 $(document).ready attachHandler
 $(document).on "page:load", attachHandler

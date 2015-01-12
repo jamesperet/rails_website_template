@@ -13,14 +13,26 @@
 			  <div class="form-inputs">
 			    <%= f.text_field :website_name, :label => (t 'admin_panel.website_name'), class:'input-xlarge' %>
 			    <%= f.text_field :tagline, :label => (t 'admin_panel.tagline'), class: 'input-xxlarge' %>
-			    <%= f.text_field :website_link, :label => (t 'admin_panel.website_link'), class:'input-xlarge' %>
-			    <%= f.select :default_language, ["en", "pt-BR"],  :label => (t 'admin_panel.default_language'), help: ("<i>* "+(t "admin_panel.language_hint")+"</i>").html_safe %>
-			    <%= f.email_field :contact_email, :label => (t 'admin_panel.contact_email'), class:'input-xlarge' %>
-			    <%= f.email_field :server_email, :label => (t 'admin_panel.server_email'), class:'input-xlarge' %>
+			    <% help = ("<button type=\"button\" style=\"margin-top: -8px;\" class=\"btn help_btn btn-link\" data-trigger=\"focus\" data-toggle=\"popover\" data-placement=\"right\" title=\"#{t 'admin_panel.website_link'}\" data-content=\"#{(t 'help.website_link')}\"><i class=\"fa fa-question-circle\"></i></button>").html_safe %>
+			    <%= f.text_field :website_link, :label => (t 'admin_panel.website_link'), class:'input-xlarge', append: help %>
+			    <div class="popover-content"></div>
+			    <% help_language = ("<button type=\"button\" style=\"margin-top: 24px;\" data-html=\"true\" class=\"btn help_btn btn-link\" data-trigger=\"focus\" data-toggle=\"popover\" data-placement=\"right\" title=\"#{t 'admin_panel.default_language'}\" data-content=\"<p>#{(t 'help.default_language')}</p><p><i>*#{(t 'admin_panel.language_hint')}</i></p>\"><i class=\"fa fa-question-circle\"></i></button>").html_safe %>
+			    <div class="pull-left"><%= f.select :default_language, ["en", "pt-BR"],  :label => (t 'admin_panel.default_language') %></div>
+				<div class="pull-left"><%= help_language %></div>,
+				<div class="clearfix"></div>
+			    
+			    <% help = ("<button type=\"button\" style=\"margin-top: -8px;\" class=\"btn help_btn btn-link\" data-trigger=\"focus\" data-toggle=\"popover\" data-placement=\"right\" title=\"#{t 'admin_panel.contact_email'}\" data-content=\"#{(t 'help.contact_email')}\"><i class=\"fa fa-question-circle\"></i></button>").html_safe %>
+			    <%= f.email_field :contact_email, :label => (t 'admin_panel.contact_email'), class:'input-xlarge', append: help %>
+			    
+			    <% help = ("<button type=\"button\" style=\"margin-top: -8px;\" class=\"btn help_btn btn-link\" data-trigger=\"focus\" data-toggle=\"popover\" data-placement=\"right\" title=\"#{t 'admin_panel.server_email'}\" data-content=\"#{(t 'help.server_email')} no-reply@website.com\"><i class=\"fa fa-question-circle\"></i></button>").html_safe %>
+			    <%= f.email_field :server_email, :label => (t 'admin_panel.server_email'), class:'input-xlarge', append: help %>
 			    <hr>
+			    <% help_maintenance = ("<button type=\"button\" style=\"margin-top: 2px;\" class=\"btn help_btn btn-link\" data-trigger=\"focus\" data-toggle=\"popover\" data-placement=\"right\" title=\"#{t 'admin_panel.maintenance_mode'}\" data-content=\"#{(t 'help.maintenance_mode')}\"><i class=\"fa fa-question-circle\"></i></button>").html_safe %>
 			    <%= f.form_group :maintenance_mode, class: 'bootstrap_switch_group' do %>
-			    		<%= f.check_box :maintenance_mode, :label => (t 'admin_panel.maintenance_mode'), class: 'bootstrap_switch',
-					data: { on_text: (t 'admin_panel.on_switch'), off_text: (t 'admin_panel.off_switch') } %>
+			    		<div class="pull-left"><%= f.check_box :maintenance_mode, :label => (t 'admin_panel.maintenance_mode'), class: 'bootstrap_switch',
+					data: { on_text: (t 'admin_panel.on_switch'), off_text: (t 'admin_panel.off_switch') } %></div>
+					<div class="pull-left"><%= help_maintenance %></div>
+					<div class="clearfix"></div>
 			    <% end %>
 			    <%= f.text_field :maintenance_title, :label => (t 'admin_panel.maintenance_title'), class:'input-xlarge' %>
 			    <%= f.text_area :maintenance_message, :label => (t 'admin_panel.maintenance_message'), class:'input-block-level'  %>

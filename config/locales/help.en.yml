@@ -1,0 +1,7 @@
+en:
+  help:
+    contact_email: A email account that will receive all incoming messages from the website
+    server_email: A no reply email address for the server like
+    default_language: The default language that the website system will use to show all content
+    maintenance_mode: Use the maintenance mode to redirect all visitor to a default page while still beign able to login and use the admin panel
+    website_link: The full website link to be used in emails

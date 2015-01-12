@@ -1,0 +1,7 @@
+en:
+  help:
+    contact_email: Uma conta de email que vai receber todas as mensagens do site
+    server_email: Um endreço de email para o servidor que não tenha retorno como por exemplo 
+    default_language: Lingua padrão que o sistema do site vai usar para mostrar todas as páginas
+    maintenance_mode: Use o modo de manutenção para redirecionar todos os visitantes a uma página padrão enquanto ainda podendo fazer login e usar o sistema de administração
+    website_link: O link completo do site para ser usado em emails
